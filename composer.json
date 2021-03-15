@@ -1,0 +1,16 @@
+{
+    "name": "default/ezcommerce",
+    "description": "Loja virtual básica para a atividade final das disciplinas de PDS e PPI do IFRN-SC.",
+    "autoload": {
+        "classmap": [
+            "src/models/"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    },
+    "scripts": {
+        "tests": "./vendor/bin/phpunit tests/",
+        "ez": "php -S localhost:8080"
+    }
+}

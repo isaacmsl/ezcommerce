@@ -1,0 +1,15 @@
+<phpunit
+    bootstrap="vendor/autoload.php"
+    colors="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    processIsolation="false"
+    stopOnFailure="false"
+    cacheResult="false"
+>
+    <testsuites>
+        <testsuite name="Testes do Ezcommerce">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
