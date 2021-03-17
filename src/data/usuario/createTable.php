@@ -4,17 +4,18 @@ require_once dirname(__FILE__).'/../../../vendor/autoload.php';
 
 use Sqlite\SQLiteConnection;
 
-$pdo = (new SQLiteConnection())->connect();
+$conexao = new SQLiteConnection();
+
+$pdo = ($conexao)->connect();
 
 if($pdo != null) {
-    echo $pdo->exec("
-        CREATE TABLE usuarios(
-            nome TEXT NOT NULL,
-            email TEXT PRIMARY KEY,
-            senha TEXT NOT NULL,
-            saldo DOUBLE 
-        )
-    ");
+    echo $pdo->exec('CREATE TABLE usuarios(
+        nome VARCHAR(100) NOT NULL,
+        email VARCHAR(100) PRIMARY KEY,
+        senha VARCHAR(20) NOT NULL,
+        saldo DOUBLE
+        )'
+    );
 } else {
     echo "Achei dificil conectar! ;-;";
 }    

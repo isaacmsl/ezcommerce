@@ -8,7 +8,8 @@ $pdo = (new SQLiteConnection())->connect();
 
 if($pdo != null) {
     echo $pdo->exec("
-        INSERT INTO usuario VALUES(nome, email, senha, saldo) 
+        INSERT INTO usuarios (nome, email, senha, saldo)
+        VALUES(\"Paulo\",\"vitorlimaborges@gmail.com\", \"123\", 30.0)
     ");
 } else {
     echo "Achei dificil conectar! ;-;";
