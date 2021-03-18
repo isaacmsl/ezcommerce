@@ -1,0 +1,87 @@
+.form {
+    padding: 46px;
+    background-color: var(--black-secondary);
+    max-width: 570px;
+    display: grid;
+    gap: 60px;
+    color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: 0px 0px 40px var(--black-secondary);
+}
+
+.form__background__image {
+    background-color: #1f1f1f;
+    background-image: url("/public/background.jpg");
+}
+
+.form__background {
+    display: grid;
+    place-items: center;
+    background-color: rgba(0,0,0, .92);
+    width: 100%;
+    padding: 50px;
+}
+
+.form__title {
+    font-size: var(--size-text-g);
+}
+
+.form__header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: var(--gray-light);
+}
+
+.form__group {
+    display: grid;
+    gap: 20px;
+}
+
+.form__input__container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--black);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--gray);
+}
+.form__input__container:focus-within {
+    border-color: var(--green);
+
+}
+
+.form__input__container input {
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+    color: var(--white);
+}
+
+.form__btn__submit {
+    background-color: var(--green);
+    color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    outline: none;
+    cursor: pointer;
+}
+
+.form__btn__submit:focus {
+    filter: brightness(.7);
+}
+
+.form__link__ghost {
+    border: 2px solid var(--green);
+    background-color: transparent;
+    color: var(--green);
+    text-align: center;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    outline: none;
+}
+
+.form__link__ghost:focus {
+    filter: brightness(.8);
+}
