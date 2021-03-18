@@ -11,6 +11,7 @@
     },
     "scripts": {
         "tests": "./vendor/bin/phpunit tests/",
-        "ez": "php -S localhost:8080"
+        "start": "composer run server --timeout=0",
+        "server": "php -S localhost:8080"
     }
 }
