@@ -36,6 +36,12 @@
 .form__group {
     display: grid;
     gap: 20px;
+    text-align: center;
+}
+
+.form__group > span {
+    color: var(--red);
+    margin-top: 24px;
 }
 
 .form__input__container {
@@ -47,9 +53,17 @@
     border-radius: var(--border-radius);
     border: 2px solid var(--gray);
 }
+
 .form__input__container:focus-within {
     border-color: var(--green);
+}
 
+.form__input__container--error {
+    border-color: var(--red);
+}
+
+.form__input__container--error:focus-within {
+    border-color: var(--red);
 }
 
 .form__input__container input {
