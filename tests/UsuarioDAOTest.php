@@ -14,8 +14,7 @@ class UsuarioDAOTest extends PHPUnit {
         $u->setSenha("123");
         $u->setSaldo(90.0);
         
-        $dao = new UsuarioDAO();
-        $dao->useTestDatabase();
+        $dao = new UsuarioDAO(true);
 
         $this->assertEquals(1, $dao->cadastrar($u));
     }
@@ -28,16 +27,14 @@ class UsuarioDAOTest extends PHPUnit {
         $u->setSenha("12332");
         $u->setSaldo(9123120.0);
         
-        $dao = new UsuarioDAO();
-        $dao->useTestDatabase();
+        $dao = new UsuarioDAO(true);
 
         $this->assertEquals(1, $dao->alterar($u));
     }
         
     //Testando listar Usuario no banco
     public function testListarTodos() {
-        $dao = new UsuarioDAO();
-        $dao->useTestDatabase();
+        $dao = new UsuarioDAO(true);
         
         $usuarios = Array(
             0 => Array(
@@ -53,8 +50,7 @@ class UsuarioDAOTest extends PHPUnit {
     
     //Testando Remover Usuario no banco
     public function testRemover() {    
-        $dao = new UsuarioDAO();
-        $dao->useTestDatabase();
+        $dao = new UsuarioDAO(true);
 
         $this->assertEquals(1, $dao->remover("usuario@gmail.com"));
     }
