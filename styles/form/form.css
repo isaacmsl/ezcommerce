@@ -11,13 +11,13 @@
 
 .form__background__image {
     background-color: #1f1f1f;
-    background-image: url("/public/background.jpg");
+    background-image: url("/public/background-form.png");
 }
 
 .form__background {
     display: grid;
     place-items: center;
-    background-color: rgba(0,0,0, .92);
+    background-color: rgba(0,0,0, .9);
     width: 100%;
     padding: 50px;
 }
