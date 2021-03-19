@@ -29,7 +29,7 @@
                     ></input>
                 </div>
                 <div class="form__input__container">
-                    <img src="/public/lock.svg" alt="Ícone de email">
+                    <img src="/public/lock.svg" alt="Ícone de senha">
                     <input 
                         name="senha"
                         type="password"
