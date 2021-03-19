@@ -7,16 +7,11 @@ use Sqlite\SQLiteConnection;
 
 class UsuarioDAO {
     private $pdo;
-    private $isTest = false;
 
-    public function __construct() {
+    public function __construct($isTest=false) {
         $conexao = new SQLiteConnection();
-        $conexao->useTestDatabase();
+        if($isTest) $conexao->useTestDatabase();
         $this->pdo = ($conexao)->connect();
-    }
-
-    public function useTestDatabase() {
-        $isTest = true;
     }
 
     public function cadastrar(Usuario $u) {
