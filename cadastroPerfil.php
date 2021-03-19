@@ -12,6 +12,7 @@
 
     <!-- SCRIPTS -->
     <script src="/public/scripts/btnMostrarSenhas.js" defer></script>
+    <script src="/public/scripts/checarSenhas.js" defer></script>
 </head>
 <body class="form__background__image">
     <main class="form__background">
@@ -45,6 +46,7 @@
                     <input 
                         name="senha"
                         type="password"
+                        minlength="8"
                         placeholder="Sua senha" 
                         required
                     ></input>
@@ -54,6 +56,7 @@
                     <input 
                         name="senhaConfirmacao"
                         type="password"
+                        minlength="8"
                         placeholder="Confirme sua senha" 
                         required
                     ></input>
