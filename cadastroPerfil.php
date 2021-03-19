@@ -76,7 +76,7 @@
                 </button>
                 <a 
                     class="form__link__ghost"
-                    href="/cadastroPerfil.php"
+                    href="/login.php"
                 >
                     Cancelar
                 </a>
