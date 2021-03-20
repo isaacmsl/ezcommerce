@@ -111,6 +111,10 @@
     overflow: hidden;
 }
 
+.form__input__image--anexada {
+    color: var(--white);
+}
+
 .form__input__img label{
     padding: 20px;
     width: 100%;

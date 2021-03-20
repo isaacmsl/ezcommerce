@@ -12,6 +12,7 @@
 
     <!-- SCRIPTS -->
     <script src="/public/scripts/limitarInputNumero.js" defer></script>
+    <script src="/public/scripts/uploadImgProduto.js" defer></script>
     
 </head>
 <body class="form__background__image">
@@ -63,7 +64,7 @@
                     ></input>
                     <label for="inputImg">
                         <img src="/public/image.svg" alt="Ícone de imgProduto">
-                        Imagem do produto
+                        <span>Imagem do produto</span>
                     </label>
                 </div>
             </div>
