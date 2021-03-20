@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/styles/form/form.css">
 
     <!-- SCRIPTS -->
+    <script src="/public/scripts/limitarInputNumero.js" defer></script>
     
 </head>
 <body class="form__background__image">
