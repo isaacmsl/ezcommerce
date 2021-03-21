@@ -61,7 +61,7 @@
                         required
                     ></input>
                     <img
-                        id="btnMostrarSenhas" 
+                        class="btnMostrarSenhas" 
                         src="/public/eye-off.svg" 
                         alt="Ícone de olho"
                     >
