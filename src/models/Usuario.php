@@ -10,7 +10,7 @@ class Usuario {
     private $usuarioDAO;
 
     public function __construct() {
-        $this->usuarioDAO = new UsuarioDAO($isTest=true);
+        $this->usuarioDAO = new UsuarioDAO($isTest=false);
     }
 
     public function cadastrar() {
