@@ -30,6 +30,7 @@ class UsuarioController{
     }
     
     public function listarTodos($params) {
+        $u = new Usuario();
         return $u->listarTodos();
     }
 }
