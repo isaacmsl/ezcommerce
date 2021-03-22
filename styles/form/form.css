@@ -7,6 +7,7 @@
     color: var(--white);
     border-radius: var(--border-radius);
     box-shadow: 0px 0px 40px var(--black-secondary);
+    width: 100%;
 }
 
 .form__background__image {
@@ -98,4 +99,28 @@
 
 .form__link__ghost:focus {
     filter: brightness(.8);
+}
+
+.form__input__img {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--black);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--gray);
+    overflow: hidden;
+}
+
+.form__input__image--anexada {
+    color: var(--white);
+}
+
+.form__input__img label{
+    padding: 20px;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--gray-light);
 }
