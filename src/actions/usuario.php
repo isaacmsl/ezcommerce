@@ -6,7 +6,7 @@ $usuarioController = new UsuarioController();
 
 $acao = $_REQUEST['acao'];
 
-$metodosSuportados = ['criar', 'remover', 'alterar', 'listar'];
+$metodosSuportados = ['criar', 'remover', 'alterar', 'listarTodos', 'listarPorEmail'];
 
 if(in_array($acao, $metodosSuportados)) {
     $usuarioController->$acao($_REQUEST);

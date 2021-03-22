@@ -33,5 +33,11 @@ class UsuarioController{
         $u = new Usuario();
         return $u->listarTodos();
     }
+
+    public function listarPorEmail($params) {
+        $u = new Usuario();
+        $u->setEmail($params['email']);
+        return $u->listarPorEmail();
+    }
 }
 

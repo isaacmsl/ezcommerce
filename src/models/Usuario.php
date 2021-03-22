@@ -29,6 +29,10 @@ class Usuario {
         return $this->usuarioDAO->listarTodos();
     }
 
+    public function listarPorEmail() {
+        return $this->usuarioDAO->listarPorEmail($this->email);
+    }
+
     public function getNome(){
         return $this->nome;
     }
