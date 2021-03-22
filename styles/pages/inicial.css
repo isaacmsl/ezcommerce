@@ -1,0 +1,43 @@
+body {
+    display: flex;
+}
+
+body > main {
+    background-color: var(--black-secondary);
+    padding: 50px;
+    display: grid;
+    gap: 70px;
+    width: 100%;
+}
+
+body > main > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+body > main > ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+    place-items: center;
+}
+
+@media only screen and (max-width: 1206px) {
+    body > main > ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 984px) {
+    body > main > ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    body > main > ul {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
