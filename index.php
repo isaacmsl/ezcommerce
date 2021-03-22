@@ -1,13 +1,8 @@
 <?php
     require_once dirname(__FILE__) . "/src/models/Usuario.php";
-    session_start();
-    $usuario = $_SESSION["usuario"];
-    
-    if (isset($usuario)) {
-        $usuario = unserialize($usuario);
-    } else {
-        $usuario = false;
-    }
+    require_once dirname(__FILE__) . "/src/utils/getUsuarioUnserialize.php";
+
+    $usuario = getUsuarioUnserialize();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

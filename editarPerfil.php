@@ -1,6 +1,9 @@
 <?php
     require_once dirname(__FILE__) . "/src/utils/handleAuth.php";
+    require_once dirname(__FILE__) . "/src/utils/getUsuarioUnserialize.php";
+
     handleAuth(true, "login.php");
+    $usuario = getUsuarioUnserialize();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -48,7 +51,7 @@
                         name="nomeCompleto"
                         type="type"
                         placeholder="Seu nome completo"
-                        value="Rebeca"
+                        value="<?= $usuario->getNome(); ?>"
                         required
                     ></input>
                 </div>
@@ -58,7 +61,7 @@
                         name="email"
                         type="email"
                         placeholder="Seu email" 
-                        value="rebeca@seguros.com"
+                        value="<?= $usuario->getEmail(); ?>"
                         required
                     ></input>
                 </div>
