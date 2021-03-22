@@ -1,12 +1,11 @@
 const btnMostrarSenhas = document.querySelectorAll(".btnMostrarSenhas")
 
 btnMostrarSenhas.forEach(btn => {
-    btn.addEventListener("click", () => {
-        const pai = btn.parentElement
-        const avo = pai.parentElement
-        
-        const inputs = avo.querySelectorAll("input")
+    const pai = btn.parentElement
+    const avo = pai.parentElement
+    const inputs = avo.querySelectorAll("input[type='password']")
 
+    btn.addEventListener("click", () => {
         inputs.forEach(input => {
             const tipoAtual = input.getAttribute("type")
 
