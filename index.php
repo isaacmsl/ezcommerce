@@ -1,5 +1,16 @@
 <?php
-    $estaLogado = true;
+    require_once dirname(__FILE__) . "/src/models/Usuario.php";
+    session_start();
+    //$usuario = $_SESSION["usuario"];
+    
+    $usuario = new Usuario();
+    $usuario->setNome("Paulo");
+    
+    if (isset($usuario)) {
+        //$usuario = unserialize($usuario);
+    } else {
+        $usuario = false;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -22,11 +33,15 @@
 <body>
     <nav class="nav">
         <header class="nav__header">
-            <?php if ($estaLogado) { ?>
-                <h1>Olá, Lourenço</h1>
+            <?php if ($usuario) { ?>
+                <?php
+                    $nomeCompleto = $usuario->getNome();
+                    $sobrenome = explode(" ", $nomeCompleto)[0]
+                ?>
+                <h1>Olá, <?= $sobrenome ?> </h1>
                 <a 
                     class="nav__header__sair"
-                    href="/logout.php"
+                    href="/src/actions/logout.php"
                 >
                     <img src="/public/log-out.svg" width="24px" alt="Ícone de logout">
                     <span>Sair</span>
@@ -43,7 +58,7 @@
                     <span>Inicial</span>
                 </a>
             </li>
-            <?php if ($estaLogado) { ?>
+            <?php if ($usuario) { ?>
                 <li class="nav__header__btn">
                     <a href="/carrinho.php">
                         <img src="/public/cart.svg" alt="Ícone de carrinho">
@@ -78,7 +93,7 @@
                 ></input>
             </div>
 
-            <?php if ($estaLogado) { ?>
+            <?php if ($usuario) { ?>
                 <a class="btnCTA" href="cadastrarProduto.php">
                     <img src="/public/plus.svg" alt="Ícone de adicionar">
                     <span>Adicionar</span>
