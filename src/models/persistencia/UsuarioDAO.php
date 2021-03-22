@@ -31,7 +31,7 @@ class UsuarioDAO {
     }
 
     public function listarPorEmail($email) {
-        return $this->pdo->query("SELECT * FROM usuarios WHERE email=\"$email\"")->fetchALL(PDO::FETCH_ASSOC);
+        return $this->pdo->query("SELECT * FROM usuarios WHERE email=\"$email\"")->fetchALL(PDO::FETCH_ASSOC)[0];
     }
 
     public function remover($email) {
