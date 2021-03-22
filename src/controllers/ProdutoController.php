@@ -8,6 +8,12 @@ if (!isset($_ENV["IMGBB_API_KEY"])) {
 } 
 
 class ProdutoController{
+    private $dao;
+
+    public function __construct() {
+        $this->dao = new ProdutoDAO();
+    }
+
     public function criar($params) {
         $p = new Produto();
         
@@ -27,12 +33,11 @@ class ProdutoController{
 
         $p->setUrlImg($resultUrl);
         
-        return $p->cadastrar();
+        return $this->dao->cadastrar($p);
     }
     public function remover($params) {
-        $p = new Produto();
-        $p->setId($params['id']);
-        return $p->remover();
+        $id = $params["id"];
+        return $this->dao->remover($id);
     }
     public function alterar($params) {
         $p = new Produto();
@@ -40,7 +45,6 @@ class ProdutoController{
         $p->setNome($params['nomeProduto']);
         $p->setValor($params['preco']);
         $p->setEstoque($params['estoque']);
-        //$p->setQntCurtidas(0);
 
         $imgBB = new ImgBB($_ENV["IMGBB_API_KEY"]);
         $imgUri = $params['imgProduto']['tmp_name'];
@@ -52,18 +56,16 @@ class ProdutoController{
 
         $p->setUrlImg($resultUrl);
 
-        return $p->alterar();
+        return $this->dao->alterar($p);
     }
     
     public function listarTodos($params) {
-        $p = new Produto();
-        return $p->listarTodos();
+        return $this->dao->listarTodos();
     }
 
     public function listarPorId($params) {
-        $p = new Produto();
-        $p->setId($params['id']);
-        return $p->listarPorId();
+        $id = $params['id'];
+        return $this->dao->listarPorId($id);
     }
 }
 

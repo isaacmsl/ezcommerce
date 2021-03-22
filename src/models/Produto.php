@@ -1,7 +1,5 @@
 <?php
 
-require_once dirname(__FILE__)."/persistencia/ProdutoDAO.php";
-
 class Produto {
     private $id;
     private $nome;
@@ -10,33 +8,7 @@ class Produto {
     private $urlImg;
     private $qntCurtidas;
     private $emailUsuario;
-    private $produtoDAO;
 
-    public function __construct() {
-        $this->produtoDAO = new ProdutoDAO($isTest=false);
-    }
-
-    public function cadastrar() {
-        return $this->produtoDAO->cadastrar($this);
-    }
-
-    public function remover() {
-        return $this->produtoDAO->remover($this->id);
-    }
-
-    public function alterar() {
-        return $this->produtoDAO->alterar($this);
-    }
-
-    public function listarTodos() {
-        return $this->produtoDAO->listarTodos();
-    }
-
-    public function listarPorId() {
-        return $this->produtoDAO->listarPorId($this->id);
-    }
-
-    
     public function getId(){
         return $this->id;
     }

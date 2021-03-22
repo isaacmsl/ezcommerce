@@ -3,6 +3,12 @@ require_once dirname(__FILE__).'/../../vendor/autoload.php';
 
 
 class UsuarioController{
+    private $dao;
+    
+    public function __construct(){
+        $this->$dao = new UsuarioDAO();
+    }
+
     public function criar($params) {
         $u = new Usuario();
 
@@ -11,12 +17,10 @@ class UsuarioController{
         $u->setEmail($params['email']);
         $u->setSaldo(0.0);
         
-        return $u->cadastrar();
+        return ($this->dao)->cadastrar($u);
     }
     public function remover($params) {
-        $u = new Usuario();
-        $u->setEmail($params['email']);
-        return $u->remover();
+        return ($this->dao)->remover($params['email']);
     }
     public function alterar($params) {
         $u = new Usuario();
@@ -26,18 +30,15 @@ class UsuarioController{
         $u->setEmail($params['email']);
         $u->setSaldo($params['saldo']);
 
-        return $u->alterar();
+        return ($this->dao)->alterar($u);
     }
     
     public function listarTodos($params) {
-        $u = new Usuario();
-        return $u->listarTodos();
+        return ($this->dao)->listarTodos();
     }
 
     public function listarPorEmail($params) {
-        $u = new Usuario();
-        $u->setEmail($params['email']);
-        return $u->listarPorEmail();
+        return ($this->dao)->listarPorEmail($params['email']);
     }
 }
 

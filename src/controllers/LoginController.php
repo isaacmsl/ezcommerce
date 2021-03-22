@@ -3,14 +3,17 @@
 require_once dirname(__FILE__).'/../../vendor/autoload.php';
 
 class LoginController {
+    private $dao;
+
+    public function __construct() {
+        $this->dao = new UsuarioDAO();
+    }
+
     public function index($params) {
         $email = $params['email'];
         $senha = $params['senha'];
-        
-        $u = new Usuario();
-        $u->setEmail($email);
-         
-        $usuarioMatch = $u->listarPorEmail();
+             
+        $usuarioMatch = $this->dao->listarPorEmail($email);
 
         session_start();
 

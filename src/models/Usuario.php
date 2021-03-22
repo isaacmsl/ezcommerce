@@ -7,31 +7,6 @@ class Usuario {
     private $senha;
     private $email;
     private $saldo;
-    private $usuarioDAO;
-
-    public function __construct() {
-        $this->usuarioDAO = new UsuarioDAO($isTest=false);
-    }
-
-    public function cadastrar() {
-        return $this->usuarioDAO->cadastrar($this);
-    }
-
-    public function remover() {
-        return $this->usuarioDAO->remover($this->email);
-    }
-
-    public function alterar() {
-        return $this->usuarioDAO->alterar($this);
-    }
-
-    public function listarTodos() {
-        return $this->usuarioDAO->listarTodos();
-    }
-
-    public function listarPorEmail() {
-        return $this->usuarioDAO->listarPorEmail($this->email);
-    }
 
     public function getNome(){
         return $this->nome;
