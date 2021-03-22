@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ezcommerce - Cadastro Perfil</title>
+    <title>Ezcommerce - Editar Perfil</title>
 
     <!-- STYLES -->
     <link rel="stylesheet" href="/styles/global.css">
@@ -21,14 +21,30 @@
                 <img src="/public/logo-ez-gray.svg" alt="Logo da loja">
                 <label>Ezcommerce</label>
             </header>
-            <h1 class="form__title">Cadastrar perfil</h1>
+            <h1 class="form__title">Editar perfil</h1>
             <div class="form__group">
+                <div class="form__input__container">
+                    <img src="/public/lock.svg" alt="Ícone de senha">
+                    <input 
+                        name="senhaAtual"
+                        type="password"
+                        minlength="8"
+                        placeholder="Sua senha atual"
+                        required
+                    ></input>
+                    <img
+                        class="btnMostrarSenhas" 
+                        src="/public/eye-off.svg" 
+                        alt="Ícone de olho"
+                    >
+                </div>
                 <div class="form__input__container">
                     <img src="/public/user.svg" alt="Ícone de usuário">
                     <input 
                         name="nomeCompleto"
                         type="type"
-                        placeholder="Seu nome completo" 
+                        placeholder="Seu nome completo"
+                        value="Rebeca"
                         required
                     ></input>
                 </div>
@@ -38,33 +54,9 @@
                         name="email"
                         type="email"
                         placeholder="Seu email" 
+                        value="rebeca@seguros.com"
                         required
                     ></input>
-                </div>
-                <div class="form__input__container">
-                    <img src="/public/lock.svg" alt="Ícone de senha">
-                    <input 
-                        name="senha"
-                        type="password"
-                        minlength="8"
-                        placeholder="Sua senha" 
-                        required
-                    ></input>
-                </div>
-                <div class="form__input__container">
-                    <img src="/public/lock.svg" alt="Ícone de senha">
-                    <input 
-                        name="senhaConfirmacao"
-                        type="password"
-                        minlength="8"
-                        placeholder="Confirme sua senha" 
-                        required
-                    ></input>
-                    <img
-                        class="btnMostrarSenhas" 
-                        src="/public/eye-off.svg" 
-                        alt="Ícone de olho"
-                    >
                 </div>
             </div>
             <div class="form__group">
@@ -72,11 +64,11 @@
                     class="form__btn__submit"
                     type="submit"
                 >
-                    Cadastrar!
+                    Editar!
                 </button>
                 <a 
                     class="form__link__ghost"
-                    href="/login.php"
+                    href="/"
                 >
                     Cancelar
                 </a>
