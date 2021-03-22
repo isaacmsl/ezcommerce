@@ -1,13 +1,10 @@
 <?php
     require_once dirname(__FILE__) . "/src/models/Usuario.php";
     session_start();
-    //$usuario = $_SESSION["usuario"];
-    
-    $usuario = new Usuario();
-    $usuario->setNome("Paulo");
+    $usuario = $_SESSION["usuario"];
     
     if (isset($usuario)) {
-        //$usuario = unserialize($usuario);
+        $usuario = unserialize($usuario);
     } else {
         $usuario = false;
     }
@@ -36,7 +33,8 @@
             <?php if ($usuario) { ?>
                 <?php
                     $nomeCompleto = $usuario->getNome();
-                    $sobrenome = explode(" ", $nomeCompleto)[0]
+                    $nomes = explode(" ", $nomeCompleto);
+                    $sobrenome = $nomes[count($nomes) - 1];
                 ?>
                 <h1>Olá, <?= $sobrenome ?> </h1>
                 <a 
