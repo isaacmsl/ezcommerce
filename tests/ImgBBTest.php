@@ -1,7 +1,7 @@
 <?php
 
 if (!isset($_ENV["IMGBB_API_KEY"])) {
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    $dotenv = Dotenv\Dotenv::createImmutable(dirname(__FILE__)."/../");
     $dotenv->load();
     $dotenv->required("IMGBB_API_KEY")->notEmpty();
 } 
