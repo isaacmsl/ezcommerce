@@ -3,7 +3,8 @@
     "description": "Loja virtual básica para a atividade final das disciplinas de PDS e PPI do IFRN-SC.",
     "autoload": {
         "classmap": [
-            "src/models/"
+            "src/models/",
+            "src/utils/"
         ],
         "psr-4": {
             "Sqlite\\": "src/data/sqlite"
@@ -16,5 +17,8 @@
         "tests": "./vendor/bin/phpunit tests/",
         "start": "composer run server --timeout=0",
         "server": "php -S localhost:8080"
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.3"
     }
 }
