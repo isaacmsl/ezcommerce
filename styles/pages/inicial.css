@@ -20,7 +20,7 @@ body > main > header {
 body > main > ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 26px;
     place-items: center;
 }
 
@@ -36,7 +36,7 @@ body > main > ul {
     }
 }
 
-@media only screen and (max-width: 714px) {
+@media only screen and (max-width: 800px) {
     body > main > ul {
         grid-template-columns: repeat(1, 1fr);
     }

@@ -8,6 +8,9 @@
     max-width: 240px;
 }
 
+.cardProduto { transition: all .3s ease-in-out; }
+.cardProduto:hover { transform: scale(1.05); }
+
 .cardProduto__imagem {
     height: 210px;
     object-fit: cover;
