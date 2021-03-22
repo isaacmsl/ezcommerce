@@ -23,7 +23,7 @@ class ProdutoController{
 
         $resultUrl = $imgBB->upload($imgUri, $imgName);
 
-        print_r("\n$resultUrl\n");
+        //print_r("\n$resultUrl\n");
 
         $p->setUrlImg($resultUrl);
         
@@ -31,16 +31,26 @@ class ProdutoController{
     }
     public function remover($params) {
         $p = new Produto();
-        $p->setEmail($params['email']);
+        $p->setId($params['id']);
         return $p->remover();
     }
     public function alterar($params) {
         $p = new Produto();
-
+        $p->setId(5);
         $p->setNome($params['nomeProduto']);
         $p->setValor($params['preco']);
         $p->setEstoque($params['estoque']);
-        $p->setUrlImg($params['imgProduto']);
+        //$p->setQntCurtidas(0);
+
+        $imgBB = new ImgBB($_ENV["IMGBB_API_KEY"]);
+        $imgUri = $params['imgProduto']['tmp_name'];
+        $imgName = $params['imgProduto']['name'];
+
+        $resultUrl = $imgBB->upload($imgUri, $imgName);
+
+        //print_r("\n$resultUrl\n");
+
+        $p->setUrlImg($resultUrl);
 
         return $p->alterar();
     }
@@ -52,8 +62,8 @@ class ProdutoController{
 
     public function listarPorId($params) {
         $p = new Produto();
-        $p->setiD($params['id']);
-        return $p->listarPorEmail();
+        $p->setId($params['id']);
+        return $p->listarPorId();
     }
 }
 
