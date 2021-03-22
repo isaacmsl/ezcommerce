@@ -1,0 +1,12 @@
+.btnCTA {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: var(--green);
+    color: var(--white);
+    font-weight: bold;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
