@@ -34,19 +34,33 @@
     list-style: none;
 }
 
-.nav__header__btns > li {
+.nav__header__btn {
     cursor: pointer;
-}
-
-.nav__header__btns > li {
     border-top: 2px solid var(--gray);
+    background-color: var(--black);
 }
 
-.nav__header__btns > li:last-child {
+.nav__header__btn:not(
+    .nav__header__btn--active
+) {
+    transition: .4s background-color ease-in-out;
+}
+
+.nav__header__btn--active {
+    background-color: var(--green);
+}
+
+.nav__header__btn:not(
+    .nav__header__btn--active
+):hover {
+    background-color: var(--black-secondary);
+}
+
+.nav__header__btn:last-child {
     border-bottom: 2px solid var(--gray);
 }
 
-.nav__header__btns > li > a {
+.nav__header__btn > a {
     display: flex;
     align-items: center;
     gap: 10px;

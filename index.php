@@ -29,25 +29,25 @@
             </a>
         </header>
         <ul class="nav__header__btns">
-            <li>
+            <li class="nav__header__btn nav__header__btn--active">
                 <a href="/">
                     <img src="/public/home.svg" alt="Ícone da página inicial">
                     <span>Inicial</span>
                 </a>
             </li>
-            <li>
+            <li class="nav__header__btn">
                 <a href="/carrinho.php">
                     <img src="/public/cart.svg" alt="Ícone de carrinho">
                     <span>Carrinho</span>
                 </a>
             </li>
-            <li>
+            <li class="nav__header__btn">
                 <a href="/perfil.php">
                     <img src="/public/user.svg" alt="Ícone do perfil do usuário">
                     <span>Meu perfil</span>
                 </a>
             </li>
-            <li>
+            <li class="nav__header__btn">
                 <a href="/ajuda.php">
                     <img src="/public/help.svg" alt="Ícone de ajuda">
                     <span>Ajuda</span>
