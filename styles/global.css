@@ -12,7 +12,9 @@
     --red: #ce2b2b;
     
     /* FONTES */
+    --size-text-min: 16px;
     --size-text: 20px;
+    --size-text-md: 26px;
     --size-text-g: 28px;
 
 

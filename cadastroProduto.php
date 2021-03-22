@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="/styles/form/form.css">
 
     <!-- SCRIPTS -->
-    <script src="/public/scripts/btnMostrarSenhas.js" defer></script>
-    <script src="/public/scripts/checarSenhas.js" defer></script>
+    <script src="/public/scripts/limitarInputNumero.js" defer></script>
+    <script src="/public/scripts/uploadImgProduto.js" defer></script>
+    
 </head>
 <body class="form__background__image">
     <main class="form__background">
@@ -21,50 +22,50 @@
                 <img src="/public/logo-ez-gray.svg" alt="Logo da loja">
                 <label>Ezcommerce</label>
             </header>
-            <h1 class="form__title">Cadastrar perfil</h1>
+            <h1 class="form__title">Cadastrar produto</h1>
             <div class="form__group">
                 <div class="form__input__container">
-                    <img src="/public/user.svg" alt="Ícone de usuário">
+                    <img src="/public/box.svg" alt="Ícone de produto">
                     <input 
-                        name="nomeCompleto"
+                        name="nomeProduto"
                         type="type"
-                        placeholder="Seu nome completo" 
+                        placeholder="Produto" 
                         required
                     ></input>
                 </div>
                 <div class="form__input__container">
-                    <img src="/public/mail.svg" alt="Ícone de email">
+                    <img src="/public/dollar.svg" alt="Ícone de preço">
                     <input 
-                        name="email"
-                        type="email"
-                        placeholder="Seu email" 
+                        name="preco"
+                        type="number"
+                        min=0
+                        step="any"
+                        placeholder="Preço" 
                         required
                     ></input>
                 </div>
                 <div class="form__input__container">
-                    <img src="/public/lock.svg" alt="Ícone de senha">
+                    <img src="/public/archive.svg" alt="Ícone de estoque">
                     <input 
-                        name="senha"
-                        type="password"
-                        minlength="8"
-                        placeholder="Sua senha" 
+                        name="estoque"
+                        type="number"
+                        min=1
+                        placeholder="Quantidade em estoque" 
                         required
                     ></input>
                 </div>
-                <div class="form__input__container">
-                    <img src="/public/lock.svg" alt="Ícone de senha">
+                <div class="form__input__img">
                     <input 
-                        name="senhaConfirmacao"
-                        type="password"
-                        minlength="8"
-                        placeholder="Confirme sua senha" 
+                        name="imgProduto"
+                        type="file"
+                        id="inputImg" 
                         required
+                        hidden
                     ></input>
-                    <img
-                        class="btnMostrarSenhas" 
-                        src="/public/eye-off.svg" 
-                        alt="Ícone de olho"
-                    >
+                    <label for="inputImg">
+                        <img src="/public/image.svg" alt="Ícone de imgProduto">
+                        <span>Imagem do produto</span>
+                    </label>
                 </div>
             </div>
             <div class="form__group">

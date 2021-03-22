@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ezcommerce - Cadastro Perfil</title>
+    <title>Ezcommerce - Alterar Senha</title>
 
     <!-- STYLES -->
     <link rel="stylesheet" href="/styles/global.css">
@@ -21,43 +21,42 @@
                 <img src="/public/logo-ez-gray.svg" alt="Logo da loja">
                 <label>Ezcommerce</label>
             </header>
-            <h1 class="form__title">Cadastrar perfil</h1>
+            <h1 class="form__title">Alterar Senha</h1>
             <div class="form__group">
                 <div class="form__input__container">
-                    <img src="/public/user.svg" alt="Ícone de usuário">
+                    <img src="/public/lock.svg" alt="Ícone de senha">
                     <input 
-                        name="nomeCompleto"
-                        type="type"
-                        placeholder="Seu nome completo" 
-                        required
-                    ></input>
-                </div>
-                <div class="form__input__container">
-                    <img src="/public/mail.svg" alt="Ícone de email">
-                    <input 
-                        name="email"
-                        type="email"
-                        placeholder="Seu email" 
+                        name="novaSenha"
+                        type="password"
+                        minlength="8"
+                        placeholder="Nova senha"
                         required
                     ></input>
                 </div>
                 <div class="form__input__container">
                     <img src="/public/lock.svg" alt="Ícone de senha">
                     <input 
-                        name="senha"
+                        name="novaSenhaConfirmacao"
                         type="password"
                         minlength="8"
-                        placeholder="Sua senha" 
+                        placeholder="Confirme sua nova senha"
                         required
                     ></input>
+                    <img
+                        class="btnMostrarSenhas" 
+                        src="/public/eye-off.svg" 
+                        alt="Ícone de olho"
+                    >
                 </div>
+            </div>
+            <div class="form__group">
                 <div class="form__input__container">
                     <img src="/public/lock.svg" alt="Ícone de senha">
                     <input 
-                        name="senhaConfirmacao"
+                        name="senhaAtual"
                         type="password"
                         minlength="8"
-                        placeholder="Confirme sua senha" 
+                        placeholder="Sua senha atual"
                         required
                     ></input>
                     <img
@@ -72,11 +71,11 @@
                     class="form__btn__submit"
                     type="submit"
                 >
-                    Cadastrar!
+                    Alterar!
                 </button>
                 <a 
                     class="form__link__ghost"
-                    href="/login.php"
+                    href="/"
                 >
                     Cancelar
                 </a>
