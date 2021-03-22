@@ -17,3 +17,5 @@ jobs:
         with:
           bootstrap: vendor/autoload.php
           configuration: phpunit.xml
+        env:
+          IMGBB_API_KEY: ${{ secrets.IMGBB_API_KEY }}
