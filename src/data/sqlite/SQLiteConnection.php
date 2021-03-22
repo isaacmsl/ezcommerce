@@ -23,6 +23,7 @@ class SQLiteConnection {
             $path = $this->isTest ? "bancoTeste.db" : "banco.db";
             $this->pdo = new \PDO("sqlite:" . dirname(__FILE__)."/../$path");
         }
+        $this->pdo->exec("PRAGMA foreign_keys = ON");
         return $this->pdo;
     }
 }
