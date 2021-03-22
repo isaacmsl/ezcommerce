@@ -18,6 +18,10 @@
     font-size: var(--size-text-g);
 }
 
+.nav__header span {
+    color: var(--gray-light);
+}
+
 .nav__header__sair {
     display: flex;
     align-items: center;
@@ -25,6 +29,7 @@
     color: var(--gray-light);
     cursor: pointer;
 }
+
 
 .nav__header__sair:hover {
     filter: brightness(120%);

@@ -1,3 +1,6 @@
+<?php
+    $estaLogado = true;
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,14 +22,19 @@
 <body>
     <nav class="nav">
         <header class="nav__header">
-            <h1>Olá, Lourenço</h1>
-            <a 
-                class="nav__header__sair"
-                href="/logout.php"
-            >
-                <img src="/public/log-out.svg" width="24px" alt="Ícone de logout">
-                <span>Sair</span>
-            </a>
+            <?php if ($estaLogado) { ?>
+                <h1>Olá, Lourenço</h1>
+                <a 
+                    class="nav__header__sair"
+                    href="/logout.php"
+                >
+                    <img src="/public/log-out.svg" width="24px" alt="Ícone de logout">
+                    <span>Sair</span>
+                </a>
+            <?php } else { ?>
+                <h1>Ezcommerce</h1>
+                <span>Achei fácil comprar</span>
+            <?php } ?>
         </header>
         <ul class="nav__header__btns">
             <li class="nav__header__btn nav__header__btn--active">
@@ -35,18 +43,20 @@
                     <span>Inicial</span>
                 </a>
             </li>
-            <li class="nav__header__btn">
-                <a href="/carrinho.php">
-                    <img src="/public/cart.svg" alt="Ícone de carrinho">
-                    <span>Carrinho</span>
-                </a>
-            </li>
-            <li class="nav__header__btn">
-                <a href="/perfil.php">
-                    <img src="/public/user.svg" alt="Ícone do perfil do usuário">
-                    <span>Meu perfil</span>
-                </a>
-            </li>
+            <?php if ($estaLogado) { ?>
+                <li class="nav__header__btn">
+                    <a href="/carrinho.php">
+                        <img src="/public/cart.svg" alt="Ícone de carrinho">
+                        <span>Carrinho</span>
+                    </a>
+                </li>
+                <li class="nav__header__btn">
+                    <a href="/perfil.php">
+                        <img src="/public/user.svg" alt="Ícone do perfil do usuário">
+                        <span>Meu perfil</span>
+                    </a>
+                </li>
+            <?php } ?>
             <li class="nav__header__btn">
                 <a href="/ajuda.php">
                     <img src="/public/help.svg" alt="Ícone de ajuda">
@@ -68,10 +78,17 @@
                 ></input>
             </div>
 
-            <a class="btnCTA" href="cadastrarProduto.php">
-                <img src="/public/plus.svg" alt="Ícone de adicionar">
-                <span>Adicionar</span>
-            </a>
+            <?php if ($estaLogado) { ?>
+                <a class="btnCTA" href="cadastrarProduto.php">
+                    <img src="/public/plus.svg" alt="Ícone de adicionar">
+                    <span>Adicionar</span>
+                </a>
+            <?php } else { ?>
+                <a class="btnCTA" href="login.php">
+                    <img src="/public/log-in.svg" alt="Ícone de adicionar">
+                    <span>Fazer login</span>
+                </a>
+            <?php } ?>
         </header>
         <ul>
             <li class="cardProduto">
