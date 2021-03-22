@@ -1,3 +1,7 @@
+<?php
+    require_once dirname(__FILE__) . "/src/utils/handleAuth.php";
+    handleAuth(true, "login.php");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

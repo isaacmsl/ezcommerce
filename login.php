@@ -1,3 +1,7 @@
+<?php
+    require_once dirname(__FILE__) . "/src/utils/handleAuth.php";
+    handleAuth(false, "index.php");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,7 +16,11 @@
 </head>
 <body class="form__background__image">
     <main class="form__background">
-        <form class="form">
+        <form 
+            class="form"
+            action="/src/actions/login.php"
+            method="POST"
+        >
             <header class="form__header">
                 <img src="/public/logo-ez-gray.svg" alt="Logo da loja">
                 <label>Ezcommerce</label>
