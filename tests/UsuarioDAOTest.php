@@ -47,6 +47,21 @@ class UsuarioDAOTest extends PHPUnit {
 
         $this->assertEquals($usuarios, $dao->listarTodos());
     }
+
+    public function testListarPorEmail() {
+        $dao = new UsuarioDAO(true);
+        
+        $usuarios = Array(
+            0 => Array(
+                    "nome" => "Usuario Legal",
+                    "email" => "usuario@gmail.com",
+                    "senha" => "12332",
+                    "saldo" => 9123120.0,
+                )
+            );
+
+        $this->assertEquals($usuarios, $dao->listarPorEmail("usuario@gmail.com"));
+    }
     
     //Testando Remover Usuario no banco
     public function testRemover() {    
