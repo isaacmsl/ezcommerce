@@ -89,7 +89,7 @@
             </div>
 
             <?php if ($usuario) { ?>
-                <a class="btnCTA" href="cadastrarProduto.php">
+                <a class="btnCTA" href="cadastroProduto.php">
                     <img src="/public/plus.svg" alt="Ícone de adicionar">
                     <span>Adicionar</span>
                 </a>
