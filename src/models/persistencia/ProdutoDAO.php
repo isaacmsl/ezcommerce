@@ -50,7 +50,7 @@ class ProdutoDAO {
     }
 
     public function listarPorId($id) {
-        return $this->pdo->query("SELECT * FROM produtos WHERE id=\"$id\"")->fetchALL(PDO::FETCH_ASSOC);
+        return $this->pdo->query("SELECT * FROM produtos WHERE id=\"$id\"")->fetchALL(PDO::FETCH_ASSOC)[0];
     }
 
     public function remover($id) {
