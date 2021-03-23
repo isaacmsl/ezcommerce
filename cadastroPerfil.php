@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,6 +12,7 @@
     <!-- STYLES -->
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/form/form.css">
+    <link rel="stylesheet" href="/styles/span/span.css">
 
     <!-- SCRIPTS -->
     <script src="/public/scripts/btnMostrarSenhas.js" defer></script>
@@ -16,7 +20,16 @@
 </head>
 <body class="form__background__image">
     <main class="form__background">
-        <form class="form">
+        <form 
+            class="form"
+            method="POST"
+            action="/src/actions/usuario.php?acao=criar"
+        >
+            <?php 
+                if (isset($_SESSION["error"])) {
+            ?>
+                <span class="span--error"><?= $_SESSION["error"]; ?></span>
+            <?php } unset($_SESSION["error"]); ?>
             <header class="form__header">
                 <img src="/public/logo-ez-gray.svg" alt="Logo da loja">
                 <label>Ezcommerce</label>
