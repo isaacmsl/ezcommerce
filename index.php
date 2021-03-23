@@ -1,8 +1,10 @@
 <?php
     require_once dirname(__FILE__) . "/src/models/Usuario.php";
     require_once dirname(__FILE__) . "/src/utils/getUsuarioUnserialize.php";
+    require_once dirname(__FILE__) . "/src/controllers/ProdutoController.php";
 
     $usuario = getUsuarioUnserialize();
+    $produtos = (new ProdutoController())->listarTodos();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -99,126 +101,34 @@
             <?php } ?>
         </header>
         <ul>
-            <li class="cardProduto">
-                <img 
-                    class="cardProduto__imagem"
-                    src="/public/pizza-napolitana.jpg" 
-                    alt="Imagem do produto"
-                >
-                <main class="cardProduto__conteudo">
-                    <header class="cardProduto__conteudo__header">
-                        <h3>Pizza</h3>
-                        <div class="cardProduto__conteudo__curtidas">
-                            <span>10</span>
-                            <img src="/public/heart.svg" alt="Ícone de curtidas">
-                        </div>
-                    </header>
-                    <div class="cardProduto__conteudo__info">
-                        <h2>R$ 100,00</h2>
-                        <span>por Henrique Pizzas</span>
-                    <div>
-                </main>
-            </li>
-            <li class="cardProduto">
-                <img 
-                    class="cardProduto__imagem"
-                    src="/public/pizza-napolitana.jpg" 
-                    alt="Imagem do produto"
-                >
-                <main class="cardProduto__conteudo">
-                    <header class="cardProduto__conteudo__header">
-                        <h3>Pizza</h3>
-                        <div class="cardProduto__conteudo__curtidas">
-                            <span>10</span>
-                            <img src="/public/heart.svg" alt="Ícone de curtidas">
-                        </div>
-                    </header>
-                    <div class="cardProduto__conteudo__info">
-                        <h2>R$ 100,00</h2>
-                        <span>por Henrique Pizzas</span>
-                    <div>
-                </main>
-            </li>
-            <li class="cardProduto">
-                <img 
-                    class="cardProduto__imagem"
-                    src="/public/pizza-napolitana.jpg" 
-                    alt="Imagem do produto"
-                >
-                <main class="cardProduto__conteudo">
-                    <header class="cardProduto__conteudo__header">
-                        <h3>Pizza</h3>
-                        <div class="cardProduto__conteudo__curtidas">
-                            <span>10</span>
-                            <img src="/public/heart.svg" alt="Ícone de curtidas">
-                        </div>
-                    </header>
-                    <div class="cardProduto__conteudo__info">
-                        <h2>R$ 100,00</h2>
-                        <span>por Henrique Pizzas</span>
-                    <div>
-                </main>
-            </li>
-            <li class="cardProduto">
-                <img 
-                    class="cardProduto__imagem"
-                    src="/public/pizza-napolitana.jpg" 
-                    alt="Imagem do produto"
-                >
-                <main class="cardProduto__conteudo">
-                    <header class="cardProduto__conteudo__header">
-                        <h3>Pizza</h3>
-                        <div class="cardProduto__conteudo__curtidas">
-                            <span>10</span>
-                            <img src="/public/heart.svg" alt="Ícone de curtidas">
-                        </div>
-                    </header>
-                    <div class="cardProduto__conteudo__info">
-                        <h2>R$ 100,00</h2>
-                        <span>por Henrique Pizzas</span>
-                    <div>
-                </main>
-            </li>
-            <li class="cardProduto">
-                <img 
-                    class="cardProduto__imagem"
-                    src="/public/pizza-napolitana.jpg" 
-                    alt="Imagem do produto"
-                >
-                <main class="cardProduto__conteudo">
-                    <header class="cardProduto__conteudo__header">
-                        <h3>Pizza</h3>
-                        <div class="cardProduto__conteudo__curtidas">
-                            <span>10</span>
-                            <img src="/public/heart.svg" alt="Ícone de curtidas">
-                        </div>
-                    </header>
-                    <div class="cardProduto__conteudo__info">
-                        <h2>R$ 100,00</h2>
-                        <span>por Henrique Pizzas</span>
-                    <div>
-                </main>
-            </li>
-            <li class="cardProduto">
-                <img 
-                    class="cardProduto__imagem"
-                    src="/public/pizza-napolitana.jpg" 
-                    alt="Imagem do produto"
-                >
-                <main class="cardProduto__conteudo">
-                    <header class="cardProduto__conteudo__header">
-                        <h3>Pizza</h3>
-                        <div class="cardProduto__conteudo__curtidas">
-                            <span>10</span>
-                            <img src="/public/heart.svg" alt="Ícone de curtidas">
-                        </div>
-                    </header>
-                    <div class="cardProduto__conteudo__info">
-                        <h2>R$ 100,00</h2>
-                        <span>por Henrique Pizzas</span>
-                    <div>
-                </main>
-            </li>
+            <?php 
+            foreach($produtos as $produto) { 
+                $nome = $produto->getNome();    
+                $urlImg = $produto->getUrlImg();
+                $valor = $produto->getValor();
+                $qntCurtidas = $produto->getQntCurtidas();
+            ?>
+                <li class="cardProduto">
+                    <img 
+                        class="cardProduto__imagem"
+                        src="<?= $urlImg; ?>" 
+                        alt="Imagem do produto <?= $nome; ?>"
+                    >
+                    <main class="cardProduto__conteudo">
+                        <header class="cardProduto__conteudo__header">
+                            <h3><?= $nome; ?></h3>
+                            <div class="cardProduto__conteudo__curtidas">
+                                <span><?= $qntCurtidas ?></span>
+                                <img src="/public/heart.svg" alt="Ícone de curtidas">
+                            </div>
+                        </header>
+                        <div class="cardProduto__conteudo__info">
+                            <h2>R$ <?= $valor; ?></h2>
+                            <span>por ?</span>
+                        <div>
+                    </main>
+                </li>
+            <?php } ?>
         </ul>
     </main>
 </body>
