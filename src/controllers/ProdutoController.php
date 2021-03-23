@@ -59,8 +59,23 @@ class ProdutoController{
         return $this->dao->alterar($p);
     }
     
-    public function listarTodos($params) {
-        return $this->dao->listarTodos();
+    public function listarTodos() {
+        $produtos = $this->dao->listarTodos();
+
+        foreach($produtos as $index => $produto) {
+            $p = new Produto();
+
+            $p->setNome($produto["nome"]);
+            $p->setValor($produto["valor"]);
+            $p->setEstoque($produto["estoque"]);
+            $p->setUrlImg($produto["urlImg"]);
+            $p->setQntCurtidas($produto["qntCurtidas"]);
+            $p->setEmailUsuario($produto["emailUsuario"]);
+
+            $produtos[$index] = $p;
+        }
+
+        return $produtos;
     }
 
     public function listarPorId($params) {
