@@ -110,7 +110,7 @@
                 $qntCurtidas = $produto->getQntCurtidas();
                 
                 $nomes = explode(" ", $produto->getNomeUsuario());
-                $nomeUsuario = $nomes[count($nomes) - 1];  
+                $nomeUsuario = $nomes[count($nomes) - 1]; 
             ?>
                 <li class="cardProduto">
                     <img 
