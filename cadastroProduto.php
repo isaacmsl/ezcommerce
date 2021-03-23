@@ -1,6 +1,10 @@
 <?php
     require_once dirname(__FILE__) . "/src/utils/handleAuth.php";
+    require_once dirname(__FILE__) . "/src/utils/getUsuarioUnserialize.php";
+
     handleAuth(true, "login.php");
+
+    $emailUsuario = getUsuarioUnserialize()->getEmail();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -21,7 +25,12 @@
 </head>
 <body class="form__background__image">
     <main class="form__background">
-        <form class="form">
+        <form 
+            class="form"
+            method="POST"
+            action="/src/actions/produto.php?acao=criar&emailUsuario=<?= $emailUsuario; ?>"
+            enctype="multipart/form-data"
+        >
             <header class="form__header">
                 <img src="/public/logo-ez-gray.svg" alt="Logo da loja">
                 <label>Ezcommerce</label>
