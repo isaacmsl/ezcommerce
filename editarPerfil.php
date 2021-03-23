@@ -2,6 +2,7 @@
     require_once dirname(__FILE__) . "/src/utils/handleAuth.php";
     require_once dirname(__FILE__) . "/src/utils/getUsuarioUnserialize.php";
 
+    session_start();
     handleAuth(true, "login.php");
     $usuario = getUsuarioUnserialize();
 ?>
@@ -19,11 +20,27 @@
 
     <!-- SCRIPTS -->
     <script src="/public/scripts/btnMostrarSenhas.js" defer></script>
-    <script src="/public/scripts/checarSenhas.js" defer></script>
 </head>
 <body class="form__background__image">
     <main class="form__background">
-        <form class="form">
+        <form 
+            class="form"
+            method="POST"
+            action="/src/actions/usuario.php?acao=alterar"
+        >
+            <?php 
+                if (isset($_SESSION["error"])) {
+            ?>
+                <span class="span--error"><?= $_SESSION["error"]; ?></span>
+            <?php }  else if (isset($_SESSION["success"])) { ?>
+                <span class="span--success"><?= $_SESSION["success"]; ?></span>
+            <?php 
+                }
+                
+                unset($_SESSION["error"]);
+                unset($_SESSION["success"]);
+            ?>
+            <data id="emailUsuario" hidden><?= $usuario->getEmail() ?></data>
             <header class="form__header">
                 <img src="/public/logo-ez-gray.svg" alt="Logo da loja">
                 <label>Ezcommerce</label>
