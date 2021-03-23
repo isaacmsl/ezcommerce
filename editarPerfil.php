@@ -1,6 +1,10 @@
 <?php
     require_once dirname(__FILE__) . "/src/utils/handleAuth.php";
+    require_once dirname(__FILE__) . "/src/utils/getUsuarioUnserialize.php";
+
+    session_start();
     handleAuth(true, "login.php");
+    $usuario = getUsuarioUnserialize();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,11 +20,27 @@
 
     <!-- SCRIPTS -->
     <script src="/public/scripts/btnMostrarSenhas.js" defer></script>
-    <script src="/public/scripts/checarSenhas.js" defer></script>
+    <link rel="stylesheet" href="/styles/span/span.css">
 </head>
 <body class="form__background__image">
     <main class="form__background">
-        <form class="form">
+        <form 
+            class="form"
+            method="POST"
+            action="/src/actions/usuario.php?acao=alterar"
+        >
+            <?php 
+                if (isset($_SESSION["error"])) {
+            ?>
+                <span class="span--error"><?= $_SESSION["error"]; ?></span>
+            <?php }  else if (isset($_SESSION["success"])) { ?>
+                <span class="span--success"><?= $_SESSION["success"]; ?></span>
+            <?php 
+                }
+                
+                unset($_SESSION["error"]);
+                unset($_SESSION["success"]);
+            ?>
             <header class="form__header">
                 <img src="/public/logo-ez-gray.svg" alt="Logo da loja">
                 <label>Ezcommerce</label>
@@ -48,17 +68,7 @@
                         name="nomeCompleto"
                         type="type"
                         placeholder="Seu nome completo"
-                        value="Rebeca"
-                        required
-                    ></input>
-                </div>
-                <div class="form__input__container">
-                    <img src="/public/mail.svg" alt="Ícone de email">
-                    <input 
-                        name="email"
-                        type="email"
-                        placeholder="Seu email" 
-                        value="rebeca@seguros.com"
+                        value="<?= $usuario->getNome(); ?>"
                         required
                     ></input>
                 </div>

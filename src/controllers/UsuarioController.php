@@ -1,12 +1,12 @@
 <?php 
 require_once dirname(__FILE__).'/../../vendor/autoload.php';
-
+require_once dirname(__FILE__) . '/../utils/getUsuarioUnserialize.php';
 
 class UsuarioController{
     private $dao;
     
     public function __construct(){
-        $this->$dao = new UsuarioDAO();
+        $this->dao = new UsuarioDAO();
     }
 
     public function criar($params) {
@@ -23,14 +23,32 @@ class UsuarioController{
         return ($this->dao)->remover($params['email']);
     }
     public function alterar($params) {
-        $u = new Usuario();
+        session_start();
+        $usuario = getUsuarioUnserialize();
 
-        $u->setNome($params['nomeCompleto']);
-        $u->setSenha($params['senha']);
-        $u->setEmail($params['email']);
-        $u->setSaldo($params['saldo']);
+        if ($params["senhaAtual"] == $usuario->getSenha()){
+            $usuarioAtualizado = new Usuario();
 
-        return ($this->dao)->alterar($u);
+            $usuarioAtualizado->setNome($params['nomeCompleto']);
+            $usuarioAtualizado->setSenha($usuario->getSenha());
+            $usuarioAtualizado->setEmail($usuario->getEmail());
+            $usuarioAtualizado->setSaldo($usuario->getSaldo());
+
+            $alterou = $this->dao->alterar($usuarioAtualizado);
+
+            if ($alterou) {
+                $_SESSION["success"] = "O usuário foi alterado com sucesso";
+                unset($_SESSION["error"]);
+
+                $usuarioSerializado = serialize($usuarioAtualizado);
+                
+                $_SESSION["usuario"] = $usuarioSerializado;
+            }
+        } else {
+            $_SESSION["error"] = "A senha informada não está correta."; 
+        }
+
+        header("Location: ../../editarPerfil.php");
     }
     
     public function listarTodos($params) {

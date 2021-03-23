@@ -1,0 +1,7 @@
+.span--error {
+    color: var(--red);
+}
+
+.span--success {
+    color: var(--green);
+}

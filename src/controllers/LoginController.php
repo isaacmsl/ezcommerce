@@ -26,9 +26,9 @@ class LoginController {
                 $usuarioLogado->setSenha($usuarioMatch["senha"]);
                 $usuarioLogado->setSaldo($usuarioMatch["saldo"]);
                 
-                //$usuarioSerializado = serialize($usuarioLogado);
+                $usuarioSerializado = serialize($usuarioLogado);
                 
-                $_SESSION["usuario"] = "isaac";
+                $_SESSION["usuario"] = $usuarioSerializado;
                 header("Location: ../../");
             } else {
                 $_SESSION["error"] = "Email e/ou senha incorretos";                 
