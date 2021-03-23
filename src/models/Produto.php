@@ -7,6 +7,7 @@ class Produto {
     private $estoque;
     private $urlImg;
     private $qntCurtidas;
+    private $nomeUsuario;
     private $emailUsuario;
 
     public function getId(){
@@ -49,6 +50,13 @@ class Produto {
     }
     public function setQntCurtidas($qntCurtidas) {
         $this->qntCurtidas = $qntCurtidas;
+    }
+
+    public function getNomeUsuario(){
+        return $this->nomeUsuario;
+    }
+    public function setNomeUsuario($nomeUsuario) {
+        $this->nomeUsuario = $nomeUsuario;
     }
 
     public function getEmailUsuario() {
