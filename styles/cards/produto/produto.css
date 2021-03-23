@@ -24,6 +24,11 @@
     padding: 20px;
 }
 
+.cardProduto__conteudo__btns {
+    display: flex;
+    gap: 8px;
+}
+
 .cardProduto__conteudo h2 {
     font-size: var(--size-text-md);
 }

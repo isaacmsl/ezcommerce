@@ -127,12 +127,12 @@
                                 if($donoProduto) {
                             ?>
                                 <nav class="cardProduto__conteudo__btns">
-                                    <div>
+                                    <a href="/editarProduto.php?id=<?= $id ?>">
                                         <img src="/public/edit.svg" alt="Ícone de editar produto">
-                                    </div>
-                                    <div>
+                                    </a>
+                                    <a href="/src/actions/produto.php?acao=remover&id=<?= $id ?>">
                                         <img src="/public/trash.svg" alt="Ícone de remover produto">
-                                    </div>
+                                    </a>
                                 </nav>
                             <?php } else { ?>
                                 <div class="cardProduto__conteudo__curtidas">

@@ -1,6 +1,20 @@
 <?php
     require_once dirname(__FILE__) . "/src/utils/handleAuth.php";
+    require_once dirname(__FILE__) . "/src/controllers/ProdutoController.php";
     handleAuth(true, "login.php");
+
+    $produtoArray = (new ProdutoController())->listarPorId($_REQUEST);
+
+    // o back é uma vergonha!
+    $produto = new Produto();
+
+    $produto->setId($produtoArray["id"]);
+    $produto->setNome($produtoArray["nome"]);
+    $produto->setValor($produtoArray["valor"]);
+    $produto->setEstoque($produtoArray["estoque"]);
+    $produto->setUrlImg($produtoArray["urlImg"]);
+    $produto->setQntCurtidas($produtoArray["qntCurtidas"]);
+    $produto->setEmailUsuario($produtoArray["emailUsuario"]);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -21,7 +35,12 @@
 </head>
 <body class="form__background__image">
     <main class="form__background">
-        <form class="form">
+        <form
+            action="/src/actions/produto.php?acao=alterar&id=<?= $produto->getId(); ?>"
+            method="POST" 
+            class="form"
+            enctype="multipart/form-data"
+        >
             <header class="form__header">
                 <img src="/public/logo-ez-gray.svg" alt="Logo da loja">
                 <label>Ezcommerce</label>
@@ -33,7 +52,7 @@
                     <input 
                         name="nomeProduto"
                         type="type"
-                        value="Trufa de Chocolate"
+                        value="<?= $produto->getNome(); ?>"
                         placeholder="Produto" 
                         required
                     ></input>
@@ -44,7 +63,7 @@
                         name="preco"
                         type="number"
                         min=0
-                        value="10.00"
+                        value="<?= $produto->getValor(); ?>"
                         step="any"
                         placeholder="Preço" 
                         required
@@ -56,7 +75,7 @@
                         name="estoque"
                         type="number"
                         min=1
-                        value="10"
+                        value="<?= $produto->getEstoque(); ?>"
                         placeholder="Quantidade em estoque" 
                         required
                     ></input>
@@ -66,7 +85,6 @@
                         name="imgProduto"
                         type="file"
                         id="inputImg"
-                        required
                         hidden
                     ></input>
                     <label for="inputImg">
