@@ -41,7 +41,6 @@
                 unset($_SESSION["error"]);
                 unset($_SESSION["success"]);
             ?>
-            <data id="emailUsuario" hidden><?= $usuario->getEmail() ?></data>
             <header class="form__header">
                 <img src="/public/logo-ez-gray.svg" alt="Logo da loja">
                 <label>Ezcommerce</label>
@@ -70,16 +69,6 @@
                         type="type"
                         placeholder="Seu nome completo"
                         value="<?= $usuario->getNome(); ?>"
-                        required
-                    ></input>
-                </div>
-                <div class="form__input__container">
-                    <img src="/public/mail.svg" alt="Ícone de email">
-                    <input 
-                        name="email"
-                        type="email"
-                        placeholder="Seu email" 
-                        value="<?= $usuario->getEmail(); ?>"
                         required
                     ></input>
                 </div>
