@@ -45,7 +45,7 @@ class UsuarioController{
 
             $usuarioAtualizado->setNome($params['nomeCompleto']);
             $usuarioAtualizado->setSenha($usuario->getSenha());
-            $usuarioAtualizado->setEmail($params['email']);
+            $usuarioAtualizado->setEmail($usuario->getEmail());
             $usuarioAtualizado->setSaldo($usuario->getSaldo());
 
             $alterou = $this->dao->alterar($usuarioAtualizado);
