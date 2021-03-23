@@ -18,8 +18,10 @@ class UsuarioController{
         $u->setEmail($params['email']);
         $u->setSaldo(0.0);
         
-        $criou = $this->dao->cadastrar($u);
-    
+        try {
+            $criou = $this->dao->cadastrar($u);
+        } catch(Exception $e) {}
+
         if ($criou) {
             unset($_SESSION["error"]);
 
@@ -34,6 +36,7 @@ class UsuarioController{
         }
     }
     public function remover($params) {
+        header("Location: ../../index.php");
         return ($this->dao)->remover($params['email']);
     }
     public function alterar($params) {

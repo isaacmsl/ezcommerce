@@ -35,10 +35,12 @@ class ProdutoController{
 
         $p->setUrlImg($resultUrl);
         
+        header("Location: ../../index.php");
         return $this->produtoDAO->cadastrar($p);
     }
     public function remover($params) {
         $id = $params["id"];
+        header("Location: ../../index.php");
         return $this->produtoDAO->remover($id);
     }
     public function alterar($params) {
@@ -63,6 +65,7 @@ class ProdutoController{
             $p->setUrlImg($resultUrl);
         }
 
+        header("Location: ../../index.php");
         return $this->produtoDAO->alterar($p);
     }
     

@@ -15,5 +15,3 @@ if(in_array($acao, $metodosSuportados)) {
 } else {
     echo 'tem nao';
 }
-
-header("Location: ../../index.php");
