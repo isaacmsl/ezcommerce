@@ -10,6 +10,7 @@ class UsuarioController{
     }
 
     public function criar($params) {
+        session_start();
         $u = new Usuario();
 
         $u->setNome($params['nomeCompleto']);
@@ -17,7 +18,20 @@ class UsuarioController{
         $u->setEmail($params['email']);
         $u->setSaldo(0.0);
         
-        return ($this->dao)->cadastrar($u);
+        $criou = $this->dao->cadastrar($u);
+    
+        if ($criou) {
+            unset($_SESSION["error"]);
+
+            $usuarioSerializado = serialize($u);
+            
+            $_SESSION["usuario"] = $usuarioSerializado;
+            
+            header("Location: ../../");
+        } else {
+            $_SESSION["error"] = "Não foi possível cadastrar o usuário."; 
+            header("Location: ../../cadastroPerfil.php");
+        }
     }
     public function remover($params) {
         return ($this->dao)->remover($params['email']);
