@@ -20,6 +20,7 @@
 
     <!-- SCRIPTS -->
     <script src="/public/scripts/btnMostrarSenhas.js" defer></script>
+    <link rel="stylesheet" href="/styles/span/span.css">
 </head>
 <body class="form__background__image">
     <main class="form__background">
