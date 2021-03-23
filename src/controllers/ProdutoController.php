@@ -8,10 +8,12 @@ if (!isset($_ENV["IMGBB_API_KEY"])) {
 } 
 
 class ProdutoController{
-    private $dao;
+    private $produtoDAO;
+    private $usuarioDAO;
 
     public function __construct() {
-        $this->dao = new ProdutoDAO();
+        $this->produtoDAO = new ProdutoDAO();
+        $this->usuarioDAO = new UsuarioDAO();
     }
 
     public function criar($params) {
@@ -33,11 +35,11 @@ class ProdutoController{
 
         $p->setUrlImg($resultUrl);
         
-        return $this->dao->cadastrar($p);
+        return $this->produtoDAO->cadastrar($p);
     }
     public function remover($params) {
         $id = $params["id"];
-        return $this->dao->remover($id);
+        return $this->produtoDAO->remover($id);
     }
     public function alterar($params) {
         $p = new Produto();
@@ -56,23 +58,15 @@ class ProdutoController{
 
         $p->setUrlImg($resultUrl);
 
-        return $this->dao->alterar($p);
+        return $this->produtoDAO->alterar($p);
     }
     
     public function listarTodos() {
-        $produtos = $this->dao->listarTodos();
+        $produtos = $this->produtoDAO->listarTodos();
 
-        foreach($produtos as $index => $produto) {
-            $p = new Produto();
-
-            $p->setNome($produto["nome"]);
-            $p->setValor($produto["valor"]);
-            $p->setEstoque($produto["estoque"]);
-            $p->setUrlImg($produto["urlImg"]);
-            $p->setQntCurtidas($produto["qntCurtidas"]);
-            $p->setEmailUsuario($produto["emailUsuario"]);
-
-            $produtos[$index] = $p;
+        foreach($produtos as $produto) {
+            $usuario = $this->usuarioDAO->listarPorEmail($produto->getEmailUsuario());
+            $produto->setNomeUsuario($usuario['nome']);
         }
 
         return $produtos;
@@ -80,7 +74,7 @@ class ProdutoController{
 
     public function listarPorId($params) {
         $id = $params['id'];
-        return $this->dao->listarPorId($id);
+        return $this->produtoDAO->listarPorId($id);
     }
 }
 

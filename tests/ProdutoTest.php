@@ -52,6 +52,15 @@ class ProdutoTest extends PHPUnit {
         
         $this->assertEquals(100, $p->getQntCurtidas());
     }
+
+    //Testando a quantidade de curtidas do Usuario
+    public function testNomeUsuario() {
+        $p = new Produto();
+        $p->setNomeUsuario("Paulo");
+        
+        $this->assertEquals("Paulo", $p->getNomeUsuario());
+    }
+    
     /*
     public function testUrlImg() {
         $p = new Produto();
