@@ -103,6 +103,7 @@
         <ul>
             <?php 
             foreach($produtos as $produto) { 
+                $id = $produto->getId(); 
                 $nome = $produto->getNome();    
                 $urlImg = $produto->getUrlImg();
                 $valor = $produto->getValor();
@@ -122,7 +123,9 @@
                             <h3><?= $nome; ?></h3>
                             <div class="cardProduto__conteudo__curtidas">
                                 <span><?= $qntCurtidas ?></span>
-                                <img src="/public/heart.svg" alt="Ícone de curtidas">
+                                <a href="src/actions/curtir.php?id=<?=$id; ?>">
+                                    <img src="/public/heart.svg" alt="Ícone de curtidas">
+                                </a>
                             </div>
                         </header>
                         <div class="cardProduto__conteudo__info">
