@@ -42,21 +42,26 @@ class ProdutoController{
         return $this->produtoDAO->remover($id);
     }
     public function alterar($params) {
+        $id = $params['id'];
+        $produtoAtual = $this->listarPorId($params);
+
         $p = new Produto();
-        $p->setId(5);
+        $p->setId($produtoAtual["id"]);
         $p->setNome($params['nomeProduto']);
         $p->setValor($params['preco']);
         $p->setEstoque($params['estoque']);
+        $p->setUrlImg($produtoAtual["urlImg"]);
+        $p->setEmailUsuario($produtoAtual["emailUsuario"]);
+        $p->setQntCurtidas($produtoAtual["qntCurtidas"]);
 
-        $imgBB = new ImgBB($_ENV["IMGBB_API_KEY"]);
-        $imgUri = $params['imgProduto']['tmp_name'];
-        $imgName = $params['imgProduto']['name'];
+        if ($params["imgProduto"]["size"] > 0) {
+            $imgBB = new ImgBB($_ENV["IMGBB_API_KEY"]);
+            $imgUri = $params['imgProduto']['tmp_name'];
+            $imgName = $params['imgProduto']['name'];
 
-        $resultUrl = $imgBB->upload($imgUri, $imgName);
-
-        //print_r("\n$resultUrl\n");
-
-        $p->setUrlImg($resultUrl);
+            $resultUrl = $imgBB->upload($imgUri, $imgName);
+            $p->setUrlImg($resultUrl);
+        }
 
         return $this->produtoDAO->alterar($p);
     }

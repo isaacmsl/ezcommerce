@@ -35,7 +35,12 @@
 </head>
 <body class="form__background__image">
     <main class="form__background">
-        <form class="form">
+        <form
+            action="/src/actions/produto.php?acao=alterar&id=<?= $produto->getId(); ?>"
+            method="POST" 
+            class="form"
+            enctype="multipart/form-data"
+        >
             <header class="form__header">
                 <img src="/public/logo-ez-gray.svg" alt="Logo da loja">
                 <label>Ezcommerce</label>
@@ -80,7 +85,6 @@
                         name="imgProduto"
                         type="file"
                         id="inputImg"
-                        required
                         hidden
                     ></input>
                     <label for="inputImg">
