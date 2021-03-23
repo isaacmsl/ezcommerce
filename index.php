@@ -107,6 +107,9 @@
                 $urlImg = $produto->getUrlImg();
                 $valor = $produto->getValor();
                 $qntCurtidas = $produto->getQntCurtidas();
+                
+                $nomes = explode(" ", $produto->getNomeUsuario());
+                $nomeUsuario = $nomes[0]. ' ' . $nomes[count($nomes) - 1];  
             ?>
                 <li class="cardProduto">
                     <img 
@@ -124,7 +127,7 @@
                         </header>
                         <div class="cardProduto__conteudo__info">
                             <h2>R$ <?= $valor; ?></h2>
-                            <span>por ?</span>
+                            <span>por <?= $nomeUsuario; ?></span>
                         <div>
                     </main>
                 </li>
