@@ -44,6 +44,11 @@
     gap: 6px;
 }
 
+.cardProduto__conteudo__btns {
+    display: flex;
+    gap: 10px;
+}
+
 .cardProduto__conteudo__info {
     display: grid;
     gap: 10px;

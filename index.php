@@ -103,11 +103,12 @@
         <ul>
             <?php 
             foreach($produtos as $produto) { 
-                $nome = $produto->getNome();    
+                $nome = $produto->getNome();   
+                $emailUsuario = $produto->getEmailUsuario(); 
                 $urlImg = $produto->getUrlImg();
                 $valor = $produto->getValor();
                 $qntCurtidas = $produto->getQntCurtidas();
-                
+
                 $nomes = explode(" ", $produto->getNomeUsuario());
                 $nomeUsuario = $nomes[0]. ' ' . $nomes[count($nomes) - 1];  
             ?>
@@ -120,13 +121,28 @@
                     <main class="cardProduto__conteudo">
                         <header class="cardProduto__conteudo__header">
                             <h3><?= $nome; ?></h3>
-                            <div class="cardProduto__conteudo__curtidas">
-                                <span><?= $qntCurtidas ?></span>
-                                <img src="/public/heart.svg" alt="Ícone de curtidas">
-                            </div>
+                            <?php 
+                                $donoProduto = $usuario && $emailUsuario == $usuario->getEmail();
+                                if($donoProduto) {
+                            ?>
+                                <nav class="cardProduto__conteudo__btns">
+                                    <div>
+                                        <img src="/public/edit.svg" alt="Ícone de editar produto">
+                                    </div>
+                                    <div>
+                                        <img src="/public/trash.svg" alt="Ícone de remover produto">
+                                    </div>
+                                </nav>
+                            <?php } else { ?>
+                                <div class="cardProduto__conteudo__curtidas">
+                                    <span><?= $qntCurtidas ?></span>
+                                    <img src="/public/heart.svg" alt="Ícone de curtidas">
+                                </div>
+                            <?php } ?>
                         </header>
                         <div class="cardProduto__conteudo__info">
                             <h2>R$ <?= $valor; ?></h2>
+                            <?php if ($donoProduto) { $nomeUsuario = "você"; } ?>
                             <span>por <?= $nomeUsuario; ?></span>
                         <div>
                     </main>
