@@ -4,12 +4,15 @@ const valorProdutoInput = inputs[0]
 const quantEstoqueInput = inputs[1]
 
 valorProdutoInput.addEventListener("keyup", () => {
-    const inputValor = Number(valorProdutoInput.value)
 
+    if(valorProdutoInput.value == ""){
+        valorProdutoInput.value = ""
+    }
+    
+    const inputValor = Number(valorProdutoInput.value)
+    
     if(inputValor < 0){
         valorProdutoInput.value = ""
-    }else if(inputValor == 0){
-        valorProdutoInput.value = "0"
     }
 })
 
