@@ -123,7 +123,10 @@
                             <h3><?= $nome; ?></h3>
                             <div class="cardProduto__conteudo__curtidas">
                                 <span><?= $qntCurtidas ?></span>
-                                <a href="src/actions/curtir.php?id=<?=$id; ?>">
+                                <a 
+                                    class="cardProduto__conteudo__curtidas__icone"
+                                    href="src/actions/curtir.php?id=<?=$id; ?>"
+                                >
                                     <img src="/public/heart.svg" alt="Ícone de curtidas">
                                 </a>
                             </div>
