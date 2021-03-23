@@ -103,6 +103,7 @@
         <ul>
             <?php 
             foreach($produtos as $produto) { 
+                $id = $produto->getId(); 
                 $nome = $produto->getNome();   
                 $emailUsuario = $produto->getEmailUsuario(); 
                 $urlImg = $produto->getUrlImg();
@@ -110,7 +111,7 @@
                 $qntCurtidas = $produto->getQntCurtidas();
 
                 $nomes = explode(" ", $produto->getNomeUsuario());
-                $nomeUsuario = $nomes[0]. ' ' . $nomes[count($nomes) - 1];  
+                $nomeUsuario = $nomes[count($nomes) - 1]; 
             ?>
                 <li class="cardProduto">
                     <img 

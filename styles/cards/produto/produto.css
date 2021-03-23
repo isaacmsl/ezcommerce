@@ -44,9 +44,9 @@
     gap: 6px;
 }
 
-.cardProduto__conteudo__btns {
-    display: flex;
-    gap: 10px;
+.cardProduto__conteudo__curtidas__icone {
+    display: grid;
+    place-items: center;
 }
 
 .cardProduto__conteudo__info {
