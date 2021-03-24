@@ -13,8 +13,6 @@ inputBuscar.addEventListener("keyup", () => {
         return
     }
 
-    console.log(buscaRegex)
-
     produtosView.forEach(produto => {
         const nome = produto.querySelector("h3").textContent
         if (!buscaRegex.test(nome)) {
@@ -24,6 +22,5 @@ inputBuscar.addEventListener("keyup", () => {
 
         }
     })
-
-    console.log(inputBuscar.value)
+    
 })
