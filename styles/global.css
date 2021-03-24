@@ -35,3 +35,19 @@ a {
     text-decoration: none;
     color: unset;
 }
+
+body {
+    min-height: 100vh;
+}
+
+/* Remove o autofill dos inputs usando auto complete */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px var(--black) inset !important;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: var(--white) !important;
+}
