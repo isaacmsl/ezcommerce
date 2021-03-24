@@ -8,6 +8,10 @@
     height: 450px;
 }
 
+.cardProduto--hidden {
+    display: none;
+}
+
 .cardProduto { transition: all .3s ease-in-out; }
 .cardProduto:hover { transform: scale(1.05); }
 
