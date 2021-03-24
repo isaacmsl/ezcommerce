@@ -76,6 +76,16 @@
                         required
                     ></input>
                 </div>
+                <div class="form__input__container">
+                    <img src="/public/mail.svg" alt="Ícone de email">
+                    <input 
+                        name="email"
+                        type="email"
+                        placeholder="Seu email"
+                        value="<?= $usuario->getEmail(); ?>"
+                        required
+                    ></input>
+                </div>
             </div>
             <div class="form__group">
                 <button

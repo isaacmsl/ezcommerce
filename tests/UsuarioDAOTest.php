@@ -29,7 +29,7 @@ class UsuarioDAOTest extends PHPUnit {
         
         $dao = new UsuarioDAO(true);
 
-        $this->assertEquals(1, $dao->alterar($u));
+        $this->assertEquals(1, $dao->alterar($u, "usuario@gmail.com"));
     }
         
     //Testando listar Usuario no banco
