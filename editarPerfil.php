@@ -22,6 +22,7 @@
     <!-- SCRIPTS -->
     <script src="/public/scripts/btnMostrarSenhas.js" defer></script>
     <script src="/public/scripts/editarPerfil.js" defer></script>
+    <script src="/public/scripts/popupConfirmarForm.js" defer></script>
 
     <link rel="stylesheet" href="/styles/span/span.css">
 </head>
