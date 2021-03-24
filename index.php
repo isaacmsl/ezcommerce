@@ -23,6 +23,9 @@
 
     <!-- Aqui utilizamos apenas o elemento input__container, mas acabamos importando todas as outras (Refatorar!) -->
     <link rel="stylesheet" href="/styles/form/form.css">
+
+    <!-- SCRIPTS -->
+    <script src="/public/scripts/popupConfirmar.js" defer></script>
 </head>
 <body>
     <nav class="nav">
@@ -130,9 +133,13 @@
                                     <a href="/editarProduto.php?id=<?= $id ?>">
                                         <img src="/public/edit.svg" alt="Ícone de editar produto">
                                     </a>
-                                    <a href="/src/actions/produto.php?acao=remover&id=<?= $id ?>">
+                                    <?php 
+                                        $msgRemoverProduto = "Deseja realmente remover esse produto?";
+                                        $actionRemoverProduto = "/src/actions/produto.php?acao=remover&id=$id"; 
+                                    ?>
+                                    <button onclick="popupConfirmar('<?= $msgRemoverProduto?>', '<?= $actionRemoverProduto ?>')">
                                         <img src="/public/trash.svg" alt="Ícone de remover produto">
-                                    </a>
+                                    </button>
                                 </nav>
                             <?php } else { ?>
                                 <div class="cardProduto__conteudo__curtidas">
