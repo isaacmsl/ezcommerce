@@ -64,6 +64,26 @@ class ProdutoDAO {
         return $p;
     }
 
+    public function listarPorEmailUsuario($emailUsuario) {
+        $produtos = $this->pdo->query("SELECT * FROM produtos WHERE emailUsuario=\"$emailUsuario\"")->fetchALL(PDO::FETCH_ASSOC);
+        
+        foreach($produtos as $index => $produto) {
+            $p = new Produto();
+
+            $p->setId($produto["id"]);
+            $p->setNome($produto["nome"]);
+            $p->setValor($produto["valor"]);
+            $p->setEstoque($produto["estoque"]);
+            $p->setUrlImg($produto["urlImg"]);
+            $p->setQntCurtidas($produto["qntCurtidas"]);
+            $p->setEmailUsuario($produto["emailUsuario"]);
+            
+            $produtos[$index] = $p;
+        }
+
+        return $produtos;
+    }
+
     public function remover($id) {
         return $this->pdo->exec("DELETE FROM produtos WHERE id=\"$id\"");
     }

@@ -75,6 +75,17 @@ class ProdutoController{
         return $produtos;
     }
 
+    public function listarPorEmailUsuario($params) {
+        $produtos = $this->produtoDAO->listarPorEmailUsuario($params['emailUsuario']);
+
+        foreach($produtos as $produto) {
+            $usuario = $this->usuarioDAO->listarPorEmail($produto->getEmailUsuario());
+            $produto->setNomeUsuario($usuario['nome']);
+        }
+
+        return $produtos;
+    }
+
     public function listarPorId($params) {
         $id = $params['id'];
         return $this->produtoDAO->listarPorId($id);
