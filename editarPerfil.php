@@ -17,9 +17,12 @@
     <!-- STYLES -->
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/form/form.css">
+    <link rel="stylesheet" href="/styles/btns/ghost.css">
 
     <!-- SCRIPTS -->
     <script src="/public/scripts/btnMostrarSenhas.js" defer></script>
+    <script src="/public/scripts/editarPerfil.js" defer></script>
+
     <link rel="stylesheet" href="/styles/span/span.css">
 </head>
 <body class="form__background__image">
@@ -75,6 +78,7 @@
             </div>
             <div class="form__group">
                 <button
+                    id="btnEditarPerfil"
                     class="form__btn__submit"
                     type="submit"
                 >
@@ -86,7 +90,14 @@
                 >
                     Cancelar
                 </a>
-            <div>
+                <button
+                    id="btnDeletarPerfil"
+                    class="ghost ghost--caution"
+                    type="submit"
+                >
+                    Deletar meu perfil
+                </button>
+            </div>
         </form>
     </main>
 </body>

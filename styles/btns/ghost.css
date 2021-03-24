@@ -1,0 +1,19 @@
+.ghost {
+    border: 2px solid var(--green);
+    background-color: transparent;
+    color: var(--green);
+    text-align: center;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+}
+
+.ghost:focus {
+    filter: brightness(.8);
+}
+
+.ghost--caution {
+    border: 2px solid var(--red);
+    color: var(--red);
+}
