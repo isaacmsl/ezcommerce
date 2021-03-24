@@ -27,6 +27,7 @@
 
     <!-- SCRIPTS -->
     <script src="/public/scripts/popupConfirmar.js" defer></script>
+    <script src="/public/scripts/buscarProduto.js" defer></script>
 </head>
 <body>
     <nav class="nav">
