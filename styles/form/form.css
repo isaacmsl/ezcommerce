@@ -21,6 +21,7 @@
     background-color: rgba(0,0,0, .9);
     width: 100%;
     padding: 50px;
+    min-height: 100vh;
 }
 
 .form__title {
