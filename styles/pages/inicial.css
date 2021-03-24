@@ -18,6 +18,11 @@ body > main > header {
     gap: 20px;
 }
 
+body > main > header > #grupoBtnInicial{
+    display: flex;
+    gap: 25px;
+}
+
 body > main > ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

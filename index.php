@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/styles/cards/produto/produto.css">
     <link rel="stylesheet" href="/styles/pages/inicial.css">
     <link rel="stylesheet" href="/styles/btns/cta.css">
+    <link rel="stylesheet" href="/styles/btns/ghost.css">
     <link rel="stylesheet" href="/styles/nav/nav.css">
 
     <!-- Aqui utilizamos apenas o elemento input__container, mas acabamos importando todas as outras (Refatorar!) -->
@@ -91,17 +92,22 @@
                 ></input>
             </div>
 
-            <?php if ($usuario) { ?>
-                <a class="btnCTA" href="cadastroProduto.php">
-                    <img src="/public/plus.svg" alt="Ícone de adicionar">
-                    <span>Adicionar</span>
-                </a>
-            <?php } else { ?>
-                <a class="btnCTA" href="login.php">
-                    <img src="/public/log-in.svg" alt="Ícone de adicionar">
-                    <span>Fazer login</span>
-                </a>
-            <?php } ?>
+            <div id="grupoBtnInicial">
+                <?php if ($usuario) { ?>
+                    <a class="btnCTA" href="cadastroProduto.php">
+                        <img src="/public/plus.svg" alt="Ícone de adicionar">
+                        <span>Adicionar</span>
+                    </a>
+                <?php } else { ?>
+                    <a class="btnCTA" href="login.php">
+                        <img src="/public/log-in.svg" alt="Ícone de adicionar">
+                        <span>Fazer login</span>
+                    </a>
+                    <a class="ghost" href="cadastroPerfil.php">
+                        <span>Cadastrar perfil</span>
+                    </a>
+                <?php } ?>
+            </div>
         </header>
         <ul>
             <?php 
