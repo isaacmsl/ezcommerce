@@ -113,7 +113,7 @@
                 $nomes = explode(" ", $produto->getNomeUsuario());
                 $nomeUsuario = $nomes[count($nomes) - 1]; 
             ?>
-                <li class="cardProduto">
+                <li class="cardProduto" title="<?= $nome; ?>">
                     <img 
                         class="cardProduto__imagem"
                         src="<?= $urlImg; ?>" 
@@ -136,11 +136,11 @@
                                 </nav>
                             <?php } else { ?>
                                 <div class="cardProduto__conteudo__curtidas">
-                                    <span><?= $qntCurtidas ?></span>
                                     <a 
                                         class="cardProduto__conteudo__curtidas__icone"
                                         href="/src/actions/curtir.php?id=<?= $id ?>"
                                     >
+                                        <span><?= $qntCurtidas ?></span>
                                         <img src="/public/heart.svg" alt="Ícone de curtidas">
                                     </a>
                                 </div>
