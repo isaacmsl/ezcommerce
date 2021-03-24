@@ -30,6 +30,20 @@
     gap: 8px;
 }
 
+.cardProduto__conteudo__btns > * {
+    transition: all .1s ease-in-out;
+}
+
+.cardProduto__conteudo__btns > *:hover {
+    transform: scale(1.15);
+}
+
+.cardProduto__conteudo__btns button {
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+}
+
 .cardProduto__conteudo h2 {
     font-size: var(--size-text-md);
 }
@@ -58,6 +72,11 @@
     display: flex;
     align-items: center;
     gap: 6px;
+    transition: all .1s ease-in-out;
+}
+
+.cardProduto__conteudo__curtidas:hover {
+    transform: scale(1.15);
 }
 
 .cardProduto__conteudo__curtidas__icone {
