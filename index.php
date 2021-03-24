@@ -61,9 +61,9 @@
                     </a>
                 </li>
                 <li class="nav__header__btn">
-                    <a href="/perfil.php">
+                    <a href="/editarPerfil.php">
                         <img src="/public/user.svg" alt="Ícone do perfil do usuário">
-                        <span>Meu perfil</span>
+                        <span>Editar perfil</span>
                     </a>
                 </li>
             <?php } ?>
