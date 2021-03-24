@@ -64,7 +64,7 @@
                     <input 
                         name="estoque"
                         type="number"
-                        min=1
+                        min=0
                         value="<?= $produto->getEstoque(); ?>"
                         placeholder="Quantidade em estoque" 
                         required

@@ -17,9 +17,13 @@ valorProdutoInput.addEventListener("keyup", () => {
 })
 
 quantEstoqueInput.addEventListener("keyup", () => {
+    if(quantEstoqueInput.value == ""){
+        quantEstoqueInput.value = ""
+    }
+    
     const inputValor = Number(quantEstoqueInput.value)
     
-    if(inputValor <= 0 || isNaN(inputValor)){
+    if(inputValor < 0){
         quantEstoqueInput.value = ""
     }
 })

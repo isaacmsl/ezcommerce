@@ -62,7 +62,7 @@
                     <input 
                         name="estoque"
                         type="number"
-                        min=1
+                        min=0
                         placeholder="Quantidade em estoque" 
                         required
                     ></input>
