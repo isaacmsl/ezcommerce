@@ -7,15 +7,23 @@ inputBuscar.addEventListener("keyup", () => {
 
     const buscaRegex = new RegExp(buscaStr, 'i')
 
-    if (buscaStr == "") {
+    
+    if (buscaStr == "" || !buscaStr) {
         produtosView.forEach(produto => produto.classList.remove("cardProduto--hidden"))
         return
     }
+
+    console.log(buscaRegex)
 
     produtosView.forEach(produto => {
         const nome = produto.querySelector("h3").textContent
         if (!buscaRegex.test(nome)) {
             produto.classList.add("cardProduto--hidden")
+        } else {
+            produto.classList.remove("cardProduto--hidden")
+
         }
     })
+
+    console.log(inputBuscar.value)
 })
