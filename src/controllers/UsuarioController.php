@@ -36,8 +36,21 @@ class UsuarioController{
         }
     }
     public function remover($params) {
-        header("Location: ../../index.php");
-        return ($this->dao)->remover($params['email']);
+        $senhaInformada = $params["senhaAtual"];
+
+        session_start();
+
+        $usuario = getUsuarioUnserialize();
+        $senhaUsuario = $usuario->getSenha();
+
+        if ($senhaUsuario == $senhaInformada) {
+            header("Location: ../../index.php");
+            unset($_SESSION["usuario"]);
+            return ($this->dao)->remover($usuario->getEmail());
+        } else {
+            header("Location: ../../editarPerfil.php");
+            $_SESSION["error"] = "A senha informada não está correta.";
+        }
     }
     public function alterar($params) {
         session_start();
