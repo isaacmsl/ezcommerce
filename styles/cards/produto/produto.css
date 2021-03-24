@@ -5,7 +5,7 @@
     border: 2px solid var(--gray);
     color: var(--white);
     width: 220px;
-    height: 420px;
+    height: 450px;
 }
 
 .cardProduto { transition: all .3s ease-in-out; }
@@ -87,7 +87,7 @@
 
 .cardProduto__conteudo__info {
     display: grid;
-    gap: 10px;
+    gap: 6px;
 }
 
 .cardProduto__conteudo__info span {
