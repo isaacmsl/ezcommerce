@@ -20,6 +20,7 @@
     <!-- SCRIPTS -->
     <script src="/public/scripts/limitarInputNumero.js" defer></script>
     <script src="/public/scripts/uploadImgProduto.js" defer></script>
+    <script src="/public/scripts/popupConfirmarForm.js" defer></script>
     
 </head>
 <body class="form__background__image">
