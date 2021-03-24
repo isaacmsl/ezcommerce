@@ -38,7 +38,7 @@ class UsuarioDAO {
         return $this->pdo->exec("DELETE FROM usuarios WHERE email=\"$email\"");
     }
 
-    public function alterar(Usuario $u) {
+    public function alterar(Usuario $u, string $emailAntigo) {
         $nome = $u->getNome();
         $email = $u->getEmail();
         $senha = $u->getSenha();
@@ -49,8 +49,9 @@ class UsuarioDAO {
             SET 
                 nome = \"$nome\", 
                 senha = \"$senha\",
-                saldo = \"$saldo\"
-            WHERE email = \"$email\"
+                saldo = \"$saldo\",
+                email = \"$email\"
+            WHERE email = \"$emailAntigo\"
         ");
     }  
 }

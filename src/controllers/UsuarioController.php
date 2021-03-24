@@ -61,10 +61,12 @@ class UsuarioController{
 
             $usuarioAtualizado->setNome($params['nomeCompleto']);
             $usuarioAtualizado->setSenha($usuario->getSenha());
-            $usuarioAtualizado->setEmail($usuario->getEmail());
+            $usuarioAtualizado->setEmail($params['email']);
             $usuarioAtualizado->setSaldo($usuario->getSaldo());
 
-            $alterou = $this->dao->alterar($usuarioAtualizado);
+            try {
+                $alterou = $this->dao->alterar($usuarioAtualizado, $usuario->getEmail());
+            } catch(Exception $e) {}
 
             if ($alterou) {
                 $_SESSION["success"] = "O usuário foi alterado com sucesso";
@@ -73,6 +75,8 @@ class UsuarioController{
                 $usuarioSerializado = serialize($usuarioAtualizado);
                 
                 $_SESSION["usuario"] = $usuarioSerializado;
+            } else {
+                $_SESSION["error"] = "Não foi possível alterar o usuário"; 
             }
         } else {
             $_SESSION["error"] = "A senha informada não está correta."; 
