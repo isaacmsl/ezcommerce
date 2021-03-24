@@ -3,18 +3,7 @@
     require_once dirname(__FILE__) . "/src/controllers/ProdutoController.php";
     handleAuth(true, "login.php");
 
-    $produtoArray = (new ProdutoController())->listarPorId($_REQUEST);
-
-    // o back é uma vergonha!
-    $produto = new Produto();
-
-    $produto->setId($produtoArray["id"]);
-    $produto->setNome($produtoArray["nome"]);
-    $produto->setValor($produtoArray["valor"]);
-    $produto->setEstoque($produtoArray["estoque"]);
-    $produto->setUrlImg($produtoArray["urlImg"]);
-    $produto->setQntCurtidas($produtoArray["qntCurtidas"]);
-    $produto->setEmailUsuario($produtoArray["emailUsuario"]);
+    $produto = (new ProdutoController())->listarPorId($_REQUEST);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

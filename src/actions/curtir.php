@@ -11,12 +11,12 @@ $p = $produtoDAO->listarPorId($idProduto);
 $novoProduto = new Produto();
 
 $novoProduto->setId($idProduto);
-$novoProduto->setNome($p['nome']);
-$novoProduto->setValor($p['valor']);
-$novoProduto->setEstoque($p['estoque']);
-$novoProduto->setEmailUsuario($p['emailUsuario']);
-$novoProduto->setUrlImg($p['urlImg']);
-$novoProduto->setQntCurtidas((int)$p['qntCurtidas']+1);
+$novoProduto->setNome($p->getNome());
+$novoProduto->setValor($p->getValor());
+$novoProduto->setEstoque($p->getEstoque());
+$novoProduto->setEmailUsuario($p->getEmailUsuario());
+$novoProduto->setUrlImg($p->getUrlImg());
+$novoProduto->setQntCurtidas((int)$p->getQntCurtidas()+1);
 
 $produtoDAO->alterar($novoProduto);
 

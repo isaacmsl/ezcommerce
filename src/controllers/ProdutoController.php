@@ -45,17 +45,12 @@ class ProdutoController{
     }
     public function alterar($params) {
         $id = $params['id'];
-        $produtoAtual = $this->listarPorId($params);
+        $p = $this->listarPorId($params);
 
-        $p = new Produto();
-        $p->setId($produtoAtual["id"]);
         $p->setNome($params['nomeProduto']);
         $p->setValor($params['preco']);
         $p->setEstoque($params['estoque']);
-        $p->setUrlImg($produtoAtual["urlImg"]);
-        $p->setEmailUsuario($produtoAtual["emailUsuario"]);
-        $p->setQntCurtidas($produtoAtual["qntCurtidas"]);
-
+        
         if ($params["imgProduto"]["size"] > 0) {
             $imgBB = new ImgBB($_ENV["IMGBB_API_KEY"]);
             $imgUri = $params['imgProduto']['tmp_name'];
