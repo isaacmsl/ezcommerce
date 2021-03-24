@@ -13,6 +13,7 @@
     <!-- STYLES -->
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/form/form.css">
+    <link rel="stylesheet" href="/styles/span/span.css">
 </head>
 <body class="form__background__image">
     <main class="form__background">
@@ -21,6 +22,14 @@
             action="/src/actions/login.php"
             method="POST"
         >
+            <?php 
+                if (isset($_SESSION["error"])) {
+            ?>
+                <span class="span--error"><?= $_SESSION["error"]; ?></span>
+            <?php 
+                    unset($_SESSION["error"]);
+                }
+            ?>
             <header class="form__header">
                 <img src="/public/logo-ez-gray.svg" alt="Logo da loja">
                 <label>Ezcommerce</label>

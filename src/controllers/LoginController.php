@@ -31,12 +31,12 @@ class LoginController {
                 $_SESSION["usuario"] = $usuarioSerializado;
                 header("Location: ../../");
             } else {
-                $_SESSION["error"] = "Email e/ou senha incorretos";                 
+                $_SESSION["error"] = "Email e/ou senha incorretos.";                 
                 header("Location: ../../login.php");
             }
         } else {
  
-            $_SESSION["error"] = "Email e/ou senha incorretos";           
+            $_SESSION["error"] = "Email e/ou senha incorretos.";           
             header("Location: ../../login.php");
         }
     }
