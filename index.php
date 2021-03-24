@@ -175,7 +175,7 @@
                             <?php 
                             } 
                             ?>
-                            <?php if ($emailUsuario == $usuario->getEmail()) { ?>
+                            <?php if ($donoProduto) { ?>
                                 <span>Seu produto</span>
                             <?php } else { ?>
                                 <span>Por: <?= $nomeUsuario; ?></span>
