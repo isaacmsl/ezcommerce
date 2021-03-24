@@ -2,10 +2,10 @@
     border-radius: var(--border-radius);
     overflow: hidden;
     background-color: var(--black);
-    cursor: pointer;
     border: 2px solid var(--gray);
     color: var(--white);
-    max-width: 240px;
+    width: 220px;
+    height: 420px;
 }
 
 .cardProduto { transition: all .3s ease-in-out; }
@@ -26,6 +26,7 @@
 
 .cardProduto__conteudo__btns {
     display: flex;
+    align-items: center;
     gap: 8px;
 }
 
@@ -39,8 +40,18 @@
 
 .cardProduto__conteudo__header {
     display: flex;
-    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: flex-start;
     justify-content: space-between;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.cardProduto__conteudo__header h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .cardProduto__conteudo__curtidas {
@@ -50,8 +61,9 @@
 }
 
 .cardProduto__conteudo__curtidas__icone {
-    display: grid;
-    place-items: center;
+    display: flex;
+    gap: 4px;
+    align-items: center;
 }
 
 .cardProduto__conteudo__info {
