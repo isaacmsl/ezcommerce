@@ -5,8 +5,9 @@ body {
 body > main {
     background-color: var(--black-secondary);
     padding: 50px;
-    display: grid;
-    gap: 70px;
+    gap: 50px;
+    display: flex;
+    flex-direction: column;
     width: 100%;
 }
 
