@@ -112,6 +112,7 @@
                 $urlImg = $produto->getUrlImg();
                 $valor = $produto->getValor();
                 $qntCurtidas = $produto->getQntCurtidas();
+                $qntEstoque = $produto->getEstoque();
 
                 $nomes = explode(" ", $produto->getNomeUsuario());
                 $nomeUsuario = $nomes[count($nomes) - 1]; 
@@ -156,7 +157,23 @@
                         <div class="cardProduto__conteudo__info">
                             <h2>R$ <?= $valor; ?></h2>
                             <?php if ($donoProduto) { $nomeUsuario = "você"; } ?>
-                            <span>por <?= $nomeUsuario; ?></span>
+                            <?php 
+                            if ($qntEstoque == 0) { 
+                            ?>
+                                <span>Sem estoque</span>
+                            <?php 
+                            } else {
+                                $textoEstoque = ($qntEstoque > 1)? "disponíveis":"disponível";
+                            ?>
+                                <span><?= $qntEstoque; ?> <?= $textoEstoque?></span>
+                            <?php 
+                            } 
+                            ?>
+                            <?php if ($emailUsuario == $usuario->getEmail()) { ?>
+                                <span>Seu produto</span>
+                            <?php } else { ?>
+                                <span>Por: <?= $nomeUsuario; ?></span>
+                            <?php } ?>
                         <div>
                     </main>
                 </li>
