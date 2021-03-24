@@ -108,8 +108,3 @@ class ProdutoDAO {
         ");
     }  
 }
-
-
-$pd = new ProdutoDAO();
-
-$pd->listarPorId(6);
