@@ -50,7 +50,18 @@ class ProdutoDAO {
     }
 
     public function listarPorId($id) {
-        return $this->pdo->query("SELECT * FROM produtos WHERE id=\"$id\"")->fetchALL(PDO::FETCH_ASSOC)[0];
+        $produtoArray = $this->pdo->query("SELECT * FROM produtos WHERE id=\"$id\"")->fetchALL(PDO::FETCH_ASSOC)[0];
+        $p = new Produto();
+
+        $p->setId($produtoArray['id']);
+        $p->setNome($produtoArray['nome']);
+        $p->setValor($produtoArray['valor']);
+        $p->setEstoque($produtoArray['estoque']);
+        $p->setUrlImg($produtoArray['urlImg']);
+        $p->setQntCurtidas($produtoArray['qntCurtidas']);
+        $p->setEmailUsuario($produtoArray['emailUsuario']);
+
+        return $p;
     }
 
     public function remover($id) {
@@ -79,3 +90,6 @@ class ProdutoDAO {
 }
 
 
+$pd = new ProdutoDAO();
+
+$pd->listarPorId(6);
