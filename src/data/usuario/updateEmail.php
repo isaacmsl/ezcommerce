@@ -6,10 +6,10 @@ use Sqlite\SQLiteConnection;
 
 $conexao = new SQLiteConnection();
 $pdo = ($conexao)->connect();
+
 if($pdo != null) {
        echo $pdo->exec("
-        INSERT INTO produtos (nome, valor, estoque, urlImg, qntCurtidas, emailUsuario)
-        VALUES(\"produtoC\", 30.2, 2, \"link\", 30, \"vitorlimaborges@gmail.com\")
+        UPDATE usuarios SET email=\"vitor@gmail.com\" WHERE email=\"vitorlimaborges@gmail.com\"
     ")."\n";
 } else {
     echo "Achei dificil conectar! ;-;";

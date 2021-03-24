@@ -21,6 +21,7 @@ if($pdo != null) {
         CONSTRAINT fk_usuarioProduto 
         FOREIGN KEY (emailUsuario) REFERENCES usuarios(email)
         ON DELETE CASCADE
+        ON UPDATE CASCADE
         )'
     )."\n";
 
