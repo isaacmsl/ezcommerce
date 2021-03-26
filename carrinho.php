@@ -27,7 +27,7 @@
 
     <!-- SCRIPTS -->
     <script src="/public/scripts/popupConfirmar.js" defer></script>
-    <script src="/public/scripts/buscarProduto.js" defer></script>
+    <script src="/public/scripts/precosCarrinho.js" defer></script>
 </head>
 <body>
     <nav class="nav">
@@ -86,7 +86,7 @@
     <main>
         <header>
             <h2>Seu carrinho<h2>
-            <a class="ghost" href="cadastroPerfil.php">
+            <a class="ghost" href="/">
                 <span>Mais produtos</span>
             </a>
         </header>
