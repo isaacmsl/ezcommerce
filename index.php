@@ -62,7 +62,7 @@
                 <li class="nav__header__btn">
                     <a href="/carrinho.php">
                         <img src="/public/cart.svg" alt="Ícone de carrinho">
-                        <span>Carrinho</span>
+                        <span>Carrinho (0)</span>
                     </a>
                 </li>
                 <li class="nav__header__btn">
@@ -98,6 +98,10 @@
                     <a class="btnCTA" href="cadastroProduto.php">
                         <img src="/public/plus.svg" alt="Ícone de adicionar">
                         <span>Adicionar</span>
+                    </a>
+                    <a class="ghost" href="carrinho.php">
+                        <span>0</span>
+                        <img src="/public/cart-green.svg" alt="Carrinho">
                     </a>
                 <?php } else { ?>
                     <a class="btnCTA" href="login.php">
@@ -150,15 +154,18 @@
                                     </button>
                                 </nav>
                             <?php } else { ?>
-                                <div class="cardProduto__conteudo__curtidas">
+                                <nav class="cardProduto__conteudo__btns">
+                                    <a href="#">
+                                        <img src="/public/cart-green.svg" alt="Adicionar ao carrinho">
+                                    </a>
                                     <a 
                                         class="cardProduto__conteudo__curtidas__icone"
                                         href="/src/actions/curtir.php?id=<?= $id ?>"
                                     >
-                                        <span><?= $qntCurtidas ?></span>
                                         <img src="/public/heart.svg" alt="Ícone de curtidas">
+                                        <span><?= $qntCurtidas ?></span>
                                     </a>
-                                </div>
+                                </nav>
                             <?php } ?>
                         </header>
                         <div class="cardProduto__conteudo__info">

@@ -1,12 +1,14 @@
 .ghost {
-    border: 2px solid var(--green);
+    border: 2px solid var(--green-light);
     background-color: transparent;
-    color: var(--green);
+    color: var(--green-light);
     text-align: center;
     padding: 20px;
     border-radius: var(--border-radius);
     outline: none;
     cursor: pointer;
+    display: flex;
+    gap: 10px;
 }
 
 .ghost:focus {

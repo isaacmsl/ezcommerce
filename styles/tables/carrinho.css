@@ -1,0 +1,57 @@
+.tableCarrinho {
+    border-collapse: collapse;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 100%;
+    color: var(--white);
+}
+
+.tableCarrinho input {
+    background-color: transparent;
+    color: var(--white);
+    padding: 4px;
+}
+
+.tableCarrinho th, td {
+    padding: 20px;
+}
+
+.tableCarrinho th {
+    position: relative;
+}
+
+.tableCarrinho tr {
+    text-align: left;
+    background-color: var(--black-secondary);
+    border: 2px solid var(--gray);
+}
+
+.tableCarrinho tr:first-child {
+    color: #FFF;
+    font-weight: 700;
+    background-color: var(--black);
+}
+
+.tableCarrinho tr:nth-child(even) {
+    background-color: var(--black-light);
+}
+
+.tableCarrinho tr:hover:not(:first-child) {
+    background-color: var(--gray);
+}
+
+.tableCarrinho td > a {
+    text-decoration: none;
+}
+
+.tableCarrinho td {
+    max-width: 200px;
+    word-wrap: break-word;
+    cursor: default;
+}
+
+.tableCarrinho td > button {
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+}
