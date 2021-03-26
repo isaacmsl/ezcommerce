@@ -1,10 +1,16 @@
 <?php
     require_once dirname(__FILE__) . "/src/models/Usuario.php";
+    require_once dirname(__FILE__) . "/src/models/Produto.php";
     require_once dirname(__FILE__) . "/src/utils/getUsuarioUnserialize.php";
-    require_once dirname(__FILE__) . "/src/controllers/ProdutoController.php";
+    require_once dirname(__FILE__) . "/src/utils/getCarrinhoUnserialize.php";
 
     $usuario = getUsuarioUnserialize();
-    $produtos = (new ProdutoController())->listarTodos();
+    $carrinho = getCarrinhoUnserialize();
+
+    $qntProdutosCarrinhos = 0;
+    if (!empty($carrinho)) {
+        $qntProdutosCarrinhos = count($carrinho);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -98,57 +104,25 @@
                 <th>Quantidade</th>
                 <th>Subtotal</th>
             </tr>
-            <tr>
-                <td>
-                    <a href="">
-                        <img src="/public/x.svg" alt="Remover" title="Remover"/>
-                    </a>
-                </td>
-                <td>Açaí</td>
-                <td>R$ 13.0</td>
-                <td>
-                    <input 
-                        type="number" 
-                        value="1" 
-                        min="1"
-                    />
-                </td>
-                <td>R$ 13.0</td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="">
-                        <img src="/public/x.svg" alt="Remover" title="Remover"/>
-                    </a>
-                </td>
-                <td>Açaí</td>
-                <td>R$ 13.0</td>
-                <td>
-                    <input 
-                        type="number" 
-                        value="1" 
-                        min="1"
-                    />
-                </td>
-                <td>R$ 13.0</td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="">
-                        <img src="/public/x.svg" alt="Remover" title="Remover"/>
-                    </a>
-                </td>
-                <td>Açaí</td>
-                <td>R$ 13.0</td>
-                <td>
-                    <input 
-                        type="number" 
-                        value="1" 
-                        min="1"
-                    />
-                </td>
-                <td>R$ 13.0</td>
-            </tr>
+            <?php foreach ($carrinho as $produto) { ?>
+                <tr>
+                    <td>
+                        <a href="">
+                            <img src="/public/x.svg" alt="Remover" title="Remover"/>
+                        </a>
+                    </td>
+                    <td><?= $produto->getNome(); ?></td>
+                    <td>R$ <?= $produto->getValor(); ?></td>
+                    <td>
+                        <input 
+                            type="number" 
+                            value="1" 
+                            min="1"
+                        />
+                    </td>
+                    <td>R$ <?= $produto->getValor(); ?></td>
+                </tr>
+            <?php } ?>
         </table>
         <footer>
             <h3>Total a pagar: <b>R$13.0</b></h3>
