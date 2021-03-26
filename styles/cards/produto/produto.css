@@ -36,10 +36,12 @@
 
 .cardProduto__conteudo__btns > * {
     transition: all .1s ease-in-out;
+    display: flex;
+    align-items: center;
 }
 
 .cardProduto__conteudo__btns > *:hover {
-    transform: scale(1.15);
+    transform: scale(1.1);
 }
 
 .cardProduto__conteudo__btns button {
