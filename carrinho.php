@@ -68,7 +68,7 @@
                 <li class="nav__header__btn nav__header__btn--active">
                     <a href="/carrinho.php">
                         <img src="/public/cart.svg" alt="Ícone de carrinho">
-                        <span>Carrinho (0)</span>
+                        <span>Carrinho (<?= $qntProdutosCarrinhos ?>)</span>
                     </a>
                 </li>
                 <li class="nav__header__btn">
@@ -107,7 +107,7 @@
             <?php foreach ($carrinho as $produto) { ?>
                 <tr>
                     <td>
-                        <a href="">
+                        <a href="/src/actions/carrinho.php?id=<?= $produto->getId(); ?>&acao=remover">
                             <img src="/public/x.svg" alt="Remover" title="Remover"/>
                         </a>
                     </td>
