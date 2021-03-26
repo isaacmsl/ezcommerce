@@ -1,9 +1,17 @@
 <?php
     require_once dirname(__FILE__) . "/src/models/Usuario.php";
     require_once dirname(__FILE__) . "/src/utils/getUsuarioUnserialize.php";
+    require_once dirname(__FILE__) . "/src/utils/getCarrinhoUnserialize.php";
     require_once dirname(__FILE__) . "/src/controllers/ProdutoController.php";
 
     $usuario = getUsuarioUnserialize();
+    $carrinho = getCarrinhoUnserialize();
+
+    $qntProdutosCarrinhos = 0;
+    if (!empty($carrinho)) {
+        $qntProdutosCarrinhos = count($carrinho);
+    }
+
     $produtos = (new ProdutoController())->listarTodos();
 ?>
 <!DOCTYPE html>
@@ -62,7 +70,7 @@
                 <li class="nav__header__btn">
                     <a href="/carrinho.php">
                         <img src="/public/cart.svg" alt="Ícone de carrinho">
-                        <span>Carrinho (0)</span>
+                        <span>Carrinho (<?= $qntProdutosCarrinhos ?>)</span>
                     </a>
                 </li>
                 <li class="nav__header__btn">
@@ -100,7 +108,7 @@
                         <span>Adicionar</span>
                     </a>
                     <a class="ghost" href="carrinho.php">
-                        <span>0</span>
+                        <span><?= $qntProdutosCarrinhos ?></span>
                         <img src="/public/cart-green.svg" alt="Carrinho">
                     </a>
                 <?php } else { ?>
@@ -155,7 +163,7 @@
                                 </nav>
                             <?php } else { ?>
                                 <nav class="cardProduto__conteudo__btns">
-                                    <a href="#">
+                                    <a href="/src/actions/carrinho.php?id=<?= $id ?>">
                                         <img src="/public/cart-green.svg" alt="Adicionar ao carrinho">
                                     </a>
                                     <a 
