@@ -1,0 +1,41 @@
+body {
+    display: flex;
+}
+
+body > main {
+    background-color: var(--black-secondary);
+    padding: 50px;
+    gap: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+body > main > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+body > main > header > h2 {
+    font-size: var(--size-text-md);
+    color: var(--white);
+}
+
+body > main > footer {
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+body > main > footer > nav {
+    display: flex;
+    gap: 20px;
+}
+
+body > main > footer > h3 {
+    font-weight: normal;
+}
