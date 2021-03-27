@@ -35,8 +35,7 @@
     <link rel="stylesheet" href="/styles/form/form.css">
 
     <!-- SCRIPTS -->
-    <script src="/public/scripts/popupConfirmar.js" defer></script>
-    <script src="/public/scripts/precosCarrinho.js" defer></script>
+    <script src="/public/scripts/duvidas.js" defer></script>
 </head>
 <body>
     <nav class="nav">
@@ -103,27 +102,45 @@
                     <img src="/public/minus.svg" alt="Menos detalhes" title="Menos detalhes"/>
                 </header>
                 <main class="duvida__conteudo duvida__conteudo--expandido">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Clique no botão verde no canto superior direito da página inicial chamado "Adicionar". Logo após, você será redirecionado para um formulário e lá deverá preencher as informações necessárias.
                 </main>
-            </li>   
+            </li>    
+            <li>
+                <header class="duvida__header">
+                    <h3>Como busco por um produto?</h3>
+                    <img src="/public/plus.svg" alt="Mais detalhes" title="Mais detalhes"/>
+                </header>
+                <main class="duvida__conteudo">
+                    Na página inicial, encontre o campo de busca na parte superior depois clique e digite o nome do produto desejado. Vale lembrar que só serão mostrados aqueles produtos com os nomes correspondentes.
+                </main>
+            </li>    
             <li class="duvida">
                 <header class="duvida__header">
-                    <h3>Como anuncio meu produto?</h3>
-                    <img src="/public/minus.svg" alt="Menos detalhes" title="Menos detalhes"/>
+                    <h3>Como adiciono produtos ao carrinho?</h3>
+                    <img src="/public/plus.svg" alt="Mais detalhes" title="Mais detalhes"/>
                 </header>
                 <main class="duvida__conteudo">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Na página inicial, encontre o produto perfeito e clique no ícone de carrinho. Pronto! Observe que no canto superior direito da página você pode visualizar a quantidade de produtos adicionados. Também é possível visualizar essa quantidade no link "Carrinho" do menu lateral. 
                 </main>
-            </li> 
+            </li>
+            <li class="duvida">
+                <header class="duvida__header">
+                    <h3>Como removo produtos do meu carrinho?</h3>
+                    <img src="/public/plus.svg" alt="Mais detalhes" title="Mais detalhes"/>
+                </header>
+                <main class="duvida__conteudo">
+                    Primeiro clique no link "Carrinho" do menu lateral ou botão superior direito da página inicial com ícone de carrinho. Segundo, clique no ícone de "X" naquele produto que deseja remover. Caso deseje esvaziar totalmente o seu carrinho, basta clicar no botão "Esvaziar carrinho".
+                </main>
+            </li>
             <li class="duvida">
                 <header class="duvida__header duvida__header--minimizado">
-                    <h3>Como anuncio meu produto?</h3>
-                    <img src="/public/minus.svg" alt="Menos detalhes" title="Menos detalhes"/>
+                    <h3>Como deleto meu perfil?</h3>
+                    <img src="/public/plus.svg" alt="Mais detalhes" title="Mais detalhes"/>
                 </header>
                 <main class="duvida__conteudo">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Clique no botão "Editar perfil" encontrado no menu lateral da página. Quando você for redirecionado para a página de editar, informe sua senha atual e logo após clique em "Deletar meu perfil".
                 </main>
-            </li>      
+            </li>  
         </ul>
     </main>
 </body>
