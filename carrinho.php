@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="/styles/btns/cta.css">
     <link rel="stylesheet" href="/styles/btns/ghost.css">
     <link rel="stylesheet" href="/styles/nav/nav.css">
+    <link rel="stylesheet" href="/styles/rodape/rodape.css">
 
     <!-- Aqui utilizamos apenas o elemento input__container, mas acabamos importando todas as outras (Refatorar!) -->
     <link rel="stylesheet" href="/styles/form/form.css">
@@ -138,7 +139,7 @@
                 </tr>
             <?php } ?>
         </table>
-        <footer>
+        <div>
             <h3>Total a pagar: <b>R$13.0</b></h3>
             <nav>
                 <a
@@ -159,7 +160,8 @@
                     Esvaziar carrinho
                 </button>
             </nav>
-        </footer>
+        </div>
+        <?php require_once dirname(__FILE__) . "/src/components/rodape.php"; ?>
     </main>
 </body>
 </html>

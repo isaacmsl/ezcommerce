@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="/styles/pages/ajuda.css">
     <link rel="stylesheet" href="/styles/cards/duvida/duvida.css">
     <link rel="stylesheet" href="/styles/nav/nav.css">
+    <link rel="stylesheet" href="/styles/rodape/rodape.css">
 
     <!-- Aqui utilizamos apenas o elemento input__container, mas acabamos importando todas as outras (Refatorar!) -->
     <link rel="stylesheet" href="/styles/form/form.css">
@@ -142,6 +143,8 @@
                 </main>
             </li>  
         </ul>
+        
+        <?php require_once dirname(__FILE__) . "/src/components/rodape.php"; ?>
     </main>
 </body>
 </html>

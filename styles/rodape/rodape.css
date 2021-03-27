@@ -1,0 +1,18 @@
+.rodape {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.rodape a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

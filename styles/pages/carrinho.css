@@ -23,7 +23,7 @@ body > main > header > h2 {
     color: var(--white);
 }
 
-body > main > footer {
+body > main > div {
     color: var(--white);
     display: flex;
     flex-direction: column;
@@ -31,11 +31,11 @@ body > main > footer {
     align-items: flex-end;
 }
 
-body > main > footer > nav {
+body > main > div > nav {
     display: flex;
     gap: 20px;
 }
 
-body > main > footer > h3 {
+body > main > div > h3 {
     font-weight: normal;
 }
