@@ -163,9 +163,11 @@
                                 </nav>
                             <?php } else { ?>
                                 <nav class="cardProduto__conteudo__btns">
-                                    <a href="/src/actions/carrinho.php?id=<?= $id ?>">
-                                        <img src="/public/cart-green.svg" alt="Adicionar ao carrinho">
-                                    </a>
+                                    <?php if ($usuario) { ?>
+                                        <a href="/src/actions/carrinho.php?id=<?= $id ?>">
+                                            <img src="/public/cart-green.svg" alt="Adicionar ao carrinho">
+                                        </a>
+                                    <?php } ?>
                                     <a 
                                         class="cardProduto__conteudo__curtidas__icone"
                                         href="/src/actions/curtir.php?id=<?= $id ?>"

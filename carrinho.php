@@ -1,4 +1,8 @@
 <?php
+    require_once dirname(__FILE__) . "/src/utils/handleAuth.php";
+
+    handleAuth(true, "/");
+
     require_once dirname(__FILE__) . "/src/models/Usuario.php";
     require_once dirname(__FILE__) . "/src/models/Produto.php";
     require_once dirname(__FILE__) . "/src/utils/getUsuarioUnserialize.php";
@@ -8,8 +12,13 @@
     $carrinho = getCarrinhoUnserialize();
 
     $qntProdutosCarrinhos = 0;
+
     if (!empty($carrinho)) {
         $qntProdutosCarrinhos = count($carrinho);
+    }
+
+    if($qntProdutosCarrinhos == 0) {
+        header("Location: /");
     }
 ?>
 <!DOCTYPE html>
