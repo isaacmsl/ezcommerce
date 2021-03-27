@@ -19,7 +19,7 @@
 <br>
 
 <p align="center">
-  <img alt="Tela inicial da aplicação" src="https://i.ibb.co/cxLb0DZ/tela-inicial-ezcommerce.png" width="100%">
+  <img alt="Tela inicial da aplicação" src="https://i.ibb.co/hV6sjKz/tela-inicia-ez.png" width="100%">
   Figura 1: Tela inicial do sistema com usuário logado
 </p>
 
