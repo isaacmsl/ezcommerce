@@ -116,9 +116,14 @@
             <?php foreach ($carrinho as $produto) { ?>
                 <tr>
                     <td>
-                        <a href="/src/actions/carrinho.php?id=<?= $produto->getId(); ?>&acao=remover">
+                        <?php 
+                            $msgRemoverProduto = "Deseja realmente remover esse produto?";
+                            $produtoId = $produto->getId();
+                            $actionRemoverProduto = "/src/actions/carrinho.php?id=$produtoId&acao=remover"; 
+                        ?>
+                        <button onclick="popupConfirmar('<?= $msgRemoverProduto?>', '<?= $actionRemoverProduto ?>')">
                             <img src="/public/x.svg" alt="Remover" title="Remover"/>
-                        </a>
+                        </button>
                     </td>
                     <td><?= $produto->getNome(); ?></td>
                     <td>R$ <?= $produto->getValor(); ?></td>
@@ -142,12 +147,16 @@
                 >
                     Realizar compra
                 </a>
-                <a
-                    href="/src/actions/carrinho.php?acao=esvaziar"
+                <?php 
+                    $msgEsvaziar = "Deseja realmente esvaziar seu carrinho?";
+                    $actionEsvaziar = "/src/actions/carrinho.php?acao=esvaziar"; 
+                ?>
+                <button 
+                    onclick="popupConfirmar('<?= $msgEsvaziar?>', '<?= $actionEsvaziar ?>')"
                     class="ghost ghost--caution"
                 >
                     Esvaziar carrinho
-                </a>
+                </button>
             </nav>
         </footer>
     </main>
