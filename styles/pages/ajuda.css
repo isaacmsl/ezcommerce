@@ -1,0 +1,25 @@
+body {
+    display: flex;
+}
+
+body > main {
+    background-color: var(--black-secondary);
+    padding: 50px;
+    gap: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+body > main > header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+body > main > header > h2 {
+    font-size: var(--size-text-md);
+    color: var(--white);
+}
