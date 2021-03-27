@@ -8,6 +8,13 @@ if (!isset($_SESSION['usuario'])) {
     session_start();
 }
 
+$querEsvaziar = isset($_REQUEST['acao']) && $_REQUEST['acao'] == 'esvaziar';
+
+if ($querEsvaziar) {
+    unset($_SESSION["carrinho"]);
+    header("Location: ../../");
+}
+
 $idProduto = $_REQUEST['id'];
 $carrinho = getCarrinhoUnserialize();
 

@@ -143,7 +143,7 @@
                     Realizar compra
                 </a>
                 <a
-                    href="#"
+                    href="/src/actions/carrinho.php?acao=esvaziar"
                     class="ghost ghost--caution"
                 >
                     Esvaziar carrinho
