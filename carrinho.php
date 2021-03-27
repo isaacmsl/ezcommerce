@@ -144,8 +144,9 @@
                 <a
                     href="#"
                     class="btnCTA"
+                    disabled
                 >
-                    Realizar compra
+                    Comprar (Em desenvolvimento)
                 </a>
                 <?php 
                     $msgEsvaziar = "Deseja realmente esvaziar seu carrinho?";
