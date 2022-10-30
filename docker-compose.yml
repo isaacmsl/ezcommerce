@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  php-apache-environment:
+    container_name: ezcommerce-server
+    image: ezcommerce-server:latest
+    volumes:
+      - ./:/var/www/html/
+    ports:
+      - 8000:80
+    working_dir: /var/www/html/
+
+# $ docker-compose exec ezcommerce-server composer install
